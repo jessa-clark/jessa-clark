@@ -1,9 +1,10 @@
-import axios from "axios"
 
-const base = process.env.NODE_ENV === "production" ? "deployed URL" : "http://localhost:3000";
+import axios from 'axios';
+
+const baseUrl = process.env.NODE_ENV === 'production' ? 'https://secret-fjord-93842.herokuapp.com/' : 'http://localhost:3000' ;
 
 const api = axios.create({
-  baseURL: baseURL
-})
+	baseURL: baseUrl,
+});
 
-export default api
+export default api;
