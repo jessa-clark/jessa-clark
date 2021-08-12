@@ -23,3 +23,5 @@ export const updateProject = async (id, projectData) => {
   const res = await api.put(`/projects/${id}`, { project: projectData });
   return res.data
 };
+
+
