@@ -22,7 +22,7 @@ const EditProject = (props) => {
   useEffect(() => {
     const fetchProject = async () => {
       const project = await getOneProject(id);
-      setProject(id, project);
+      setProject(project);
     };
     const checkUser = async () => {
       const userExists = await verify();
