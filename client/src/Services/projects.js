@@ -1,4 +1,4 @@
-import api from "./apiConfig"
+import api from "./config"
 
 export const getAllProjects = async () => {
   const res = await api.get("/projects");

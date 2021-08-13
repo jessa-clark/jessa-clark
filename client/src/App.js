@@ -1,59 +1,39 @@
 import "./App.css";
-// import Layout from "./Components/Layout";
-import Login from "./Screens/Login/Login.jsx";
+import Login from "./Screens/LogIn/LogIn"
 import Home from "./Screens/Home/Home";
-import Main from "./Containers/Main";
-import { Switch, Route, useHistory } from "react-router-dom";
+import Admin from './Screens/Admin/Admin'
+import { Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { login, register, verify, logout } from "./Services/users";
+import { verify } from "./Services/users";
+import ProjectDetails from "./Screens/ProjectDetails/ProjectDetails";
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null);
-  const history = useHistory();
+  const [user, setUser] = useState(null);
+  
 
   useEffect(() => {
-    const verifyData = async () => {
-      const userData = await verify();
-      setCurrentUser(userData);
+    const fetchUser = async () => {
+      const user = await verify();
+      setUser(user ? user : null);
     };
-    verifyData();
+    fetchUser();
   }, []);
-
-  const handleLogin = async (formData) => {
-    const userData = await login(formData);
-    setCurrentUser(userData);
-    history.push("/admin");
-  };
-
-  const handleSignUp = async (formData) => {
-    const userData = await register(formData);
-    setCurrentUser(userData);
-    history.push("/admin");
-  };
-
-  const handleLogout = async () => {
-    setCurrentUser(null);
-    localStorage.removeItem("authToken");
-    logout();
-  };
 
   return (
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home user={user}/>
         </Route>
         <Route path="/login">
-          <Login handleLogin={handleLogin} />
+          <Login />
         </Route>
-        <Route path="/sign-up">
-          <Admin handleSignUp={handleSignUp} />
+        <Route path="/admin">
+          <Admin />
         </Route>
-        <Layout currentUser={currentUser} handleLogout={handleLogout}>
-          <Route path="/">
-            <Main currentUser={currentUser} />
-          </Route>
-        </Layout>
+        <Route path="/projects">
+          <ProjectDetails />
+        </Route>
       </Switch>
     </div>
   );

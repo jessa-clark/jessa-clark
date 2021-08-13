@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function ProjectDetails() {
   return (
-    <div>Project Details</div>
+    <Link to="/admin">
+      <p>edit project</p>
+    </Link>
   )
 }
 

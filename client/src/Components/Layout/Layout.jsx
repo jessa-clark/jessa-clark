@@ -2,7 +2,7 @@ import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 import "./Layout.css";
 
-function Layout(props) {
+const Layout = (props) => {
   return (
     <div>
       <Nav />
@@ -12,4 +12,5 @@ function Layout(props) {
   );
 }
 
-export default Layout;
+export default Layout
+

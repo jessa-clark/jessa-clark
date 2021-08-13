@@ -1,8 +1,12 @@
 import React from 'react'
+import AllProjects from '../../Components/AllProjects/AllProjects'
+import Layout from '../../Components/Layout/Layout'
 
 function Home() {
   return (
-    <div>Home</div>
+  <Layout>
+    <AllProjects />
+  </Layout>
   )
 }
 
