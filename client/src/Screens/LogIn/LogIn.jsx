@@ -7,7 +7,7 @@ import "./LogIn.css"
 export default function LogIn(props) {
   const history = useHistory();
   const { setUser } = props;
-  const [userExists, setUserExists] = useState(null)
+  // const [userExists, setUserExists] = useState(null)
   const [returnUser, setReturnUser] = useState({
     username: '',
     password: '',
@@ -22,16 +22,16 @@ export default function LogIn(props) {
     e.preventDefault();
     const user = await login(returnUser);
     setUser(user);
-    history.push("/admin");
+    history.push("/admin")
   };
 
-  useEffect(() => {
-    const checkSigned = async () => {
-      const valid = await verify();
-      setUserExists(valid ? true : false);
-    };
-    checkSigned();
-  }, []);
+  // useEffect(() => {
+  //   const checkSigned = async () => {
+  //     const valid = await verify();
+  //     setUserExists(valid ? true : false);
+  //   };
+  //   checkSigned();
+  // }, []);
 
 
   return (

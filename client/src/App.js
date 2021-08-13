@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { verify } from "./Services/users";
 import ProjectDetails from "./Screens/ProjectDetails/ProjectDetails";
 import EditProject from "./Components/EditProject/EditProject";
+import SignOut from "./Components/SignOut/SignOut";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login user={user} setUser={setUser}/>
+        </Route>
+        <Route path="/sign-out">
+          <SignOut setUser={setUser}/>
         </Route>
         <Route path="/admin">
           <Admin user={user} />
