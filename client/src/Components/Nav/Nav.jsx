@@ -74,7 +74,7 @@ return (
         {userExists ? (
           <>
             <Link to="/admin" className="nav-link">Admin</Link>
-            <Link to="/sign-out" className="nav-link">Sign Out</Link>
+            <Link to="/" className="nav-link">Sign Out</Link>
           </>
         ) : (
           null

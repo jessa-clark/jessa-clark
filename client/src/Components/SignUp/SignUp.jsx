@@ -30,7 +30,7 @@ export default function Register(props) {
   };
 
   return (
-    <Layout>
+    <div>
       <section className="sign-up-screen-form">
         <h3>Register</h3>
         <form onSubmit={handleRegister}>
@@ -63,6 +63,6 @@ export default function Register(props) {
           </button>
         </form>
       </section>
-    </Layout>
+    </div>
   );
 }
