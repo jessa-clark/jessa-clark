@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2021_08_12_000108) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string "name"
     t.text "comment"
-    t.integer "project_id", null: false
+    t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_comments_on_project_id"
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_08_12_000108) do
     t.string "github_url"
     t.string "specs"
     t.text "content"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
