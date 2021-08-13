@@ -6,20 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-@admin1 = User.create(
+@admin1 = User.create!(
   username: "jemaclark",
   email: "jessa@ga.assembly",
-  password_digest: "12345")
+  password: "12345")
 
-@admin2 = User.create(
+@admin2 = User.create!(
   username: "jessa",
   email: "jema@ga.assembly",
-  password_digest: "1234")
+  password: "12345")
 
 
 pp "#{User.count} users created"
 
-@mystic_morning = Project.create(
+@mystic_morning = Project.create!(
   title: "Mystic Morning",
   image_url: "https://i.imgur.com/CwJI6sJ.png",
   deployed_url: "https://mystic-morning.netlify.app/",
@@ -30,12 +30,12 @@ pp "#{User.count} users created"
 
 pp "#{Project.count} projects created"
 
-@comment_1 = Comment.create(
+@comment_1 = Comment.create!(
   name: "Michael",
   comment: "This looks amazing! Are you planning on re-visiting this for v2?",
   project_id: @mystic_morning[:id])
 
-@comment_2 = Comment.create(
+@comment_2 = Comment.create!(
   name: "Emerson",
   comment: "The Death Card came up. What does that mean?!",
   project_id: @mystic_morning[:id])

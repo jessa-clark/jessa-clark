@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
     token = header.split(' ').last if header
     begin
       payload = decode_token(token)[0]
-      @current_user = User.find(payload["id"])
+    @current_user = User.find(payload["id"])
 
     rescue ActiveRecord::RecordNotFound => e
       render json: { errors: e.message }, status: :unauthorized

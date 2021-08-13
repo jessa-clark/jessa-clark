@@ -68,8 +68,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :password)
   end
 
-  def create_token(id)
-    payload = {id: id, exp: 24.hours.from_now.to_i}
+  def create_token(user_id)
+    payload = {id: user_id, exp: 24.hours.from_now.to_i}
     JWT.encode(payload, SECRET_KEY)
   end
 
