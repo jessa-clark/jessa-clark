@@ -6,13 +6,7 @@ import "./CreateProject.css";
 
 const CreateProject = (props) => {
   const [project, setProject] = useState({
-    title: "",
-    image_url: "",
-    deployed_url: "",
-    github_url: "",
-    specs: "",
-    content: "",
-    user_id: props.user_id
+
   });
 
   const [isCreated, setCreated] = useState(false);

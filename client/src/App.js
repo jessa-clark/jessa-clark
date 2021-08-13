@@ -6,6 +6,7 @@ import { Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { verify } from "./Services/users";
 import ProjectDetails from "./Screens/ProjectDetails/ProjectDetails";
+import EditProject from "./Components/EditProject/EditProject";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -14,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchUser = async () => {
       const user = await verify();
-      setUser(user ? user : null);
+      user ? setUser(user) : setUser(null)
     };
     fetchUser();
   }, []);
@@ -26,13 +27,16 @@ function App() {
           <Home user={user}/>
         </Route>
         <Route path="/login">
-          <Login />
+          <Login user={user} setUser={setUser}/>
         </Route>
         <Route path="/admin">
-          <Admin />
+          <Admin user={user} />
         </Route>
-        <Route path="/projects">
-          <ProjectDetails />
+        <Route path="/projects/edit/:id">
+          <EditProject user={user} />
+        </Route>
+        <Route path="/projects/:id">
+          <ProjectDetails user={user} setUser={setUser}/>
         </Route>
       </Switch>
     </div>

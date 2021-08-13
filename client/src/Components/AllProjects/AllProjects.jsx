@@ -1,30 +1,30 @@
-// import { useEffect, useState } from "react";
-// import { getAllProjects } from "../../services/projects";
-// import ProjectCard from "../../components/ProjectCard/ProjectCard";
-// import "./AllProjects.css";
+import { useEffect, useState } from "react";
+import { getAllProjects } from "../../Services/projects";
+import ProjectCard from "../../Components/ProjectCard/ProjectCard"
+import "./AllProjects.css";
 
 
-// const AllProjects = () => {
-//   const [projects, setProjects] = useState([]);
-//   const [projectList, setProjectList] = useState([]);
+const AllProjects = (props) => {
+  const [projects, setProjects] = useState([]);
   
-//   useEffect(() => {
-//     const getResults = async () => {
-//       const results = await getAllProjects();
-//       setProjects(results);
-//     };
-//     getResults();
-//   }, []);
+  
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const allProjects = await getAllProjects();
+      setProjects(allProjects);
+    };
+    fetchProjects();
+  }, []);
 
-//   return (      
-//       <div className="all-wines">
-//         {projectList.length ? (
-//           projectList.map((project) => <ProjectCard key={project.id} project={project} />)
-//         ) : (
-//           <h2>Loading...</h2>
-//         )}
-//       </div>
-//   );
-// };
+  return (
+    <div className="all-projects">
+      {projects.map((project) => {
+        return(
+          <ProjectCard key={project.id} project={project} />
+        )
+      })}
+    </div>
+  )
+};
 
-// export default AllProjects;
+export default AllProjects;

@@ -1,24 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { login } from '../../Services/users';
+import { login, verify } from '../../Services/users';
 import Layout from '../../Components/Layout/Layout'
 import "./LogIn.css"
 
 export default function LogIn(props) {
   const history = useHistory();
   const { setUser } = props;
+  const [userExists, setUserExists] = useState(null)
   const [returnUser, setReturnUser] = useState({
     username: '',
     password: '',
   });
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setReturnUser((prevData) => ({
-      ...prevData,
-      [name]: value
-    }))
-  }
+    setReturnUser({ ...returnUser, [name]: value });
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -26,6 +24,14 @@ export default function LogIn(props) {
     setUser(user);
     history.push("/admin");
   };
+
+  useEffect(() => {
+    const checkSigned = async () => {
+      const valid = await verify();
+      setUserExists(valid ? true : false);
+    };
+    checkSigned();
+  }, []);
 
 
   return (

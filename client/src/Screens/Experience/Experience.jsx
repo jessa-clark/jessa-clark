@@ -7,4 +7,3 @@ function Experience() {
 }
 
 export default Experience
-<div>Experience</div>

@@ -9,9 +9,12 @@ export const login = async (loginData) => {
 
 export const register = async (registerData) => {
 	const res = await api.post('/users', { user: registerData });
-	localStorage.setItem('authToken', res.data.token);
-	api.defaults.headers.common.authorization = `Bearer ${res.data.token}`;
-	return res.data.user;
+  const {token} = res.data
+  if (token) {
+    localStorage.setItem('authToken', res.data.token);
+    api.defaults.headers.common.authorization = `Bearer ${res.data.token}`;
+    return res.data.user;
+  }
 };
 
 export const verify = async () => {
@@ -20,9 +23,10 @@ export const verify = async () => {
 		api.defaults.headers.common.authorization = `Bearer ${token}`;
 		const res = await api.get('/users/verify');
 		return res.data;
-	}
-	return null;
+	};
+  return false;
 };
+
 
 export const logout = () => {
   localStorage.removeItem('authToken')

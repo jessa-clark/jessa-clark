@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { register } from "../../services/users";
-import Layout from "../../components/Layout/Layout";
+import { Link, Route, useHistory } from "react-router-dom";
+import { register } from "../../Services/users";
+import Layout from "../../Components/Layout/Layout";
 import "./SignUp.css";
 
-export default function Register (props) {
+export default function Register(props) {
   const history = useHistory();
   const { setUser } = props;
 
@@ -16,14 +16,17 @@ export default function Register (props) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setNewUser((prevState) =>({ ...prevState, [name]: value }));
+    setNewUser({ ...newUser, [name]: value });
   };
 
-  const handleRegister = async (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    const addUser = await register(newUser);
-    setUser(addUser);
-    history.push("/admin");
+    const addUser = async () => {
+      const addedUser = await register(newUser);
+      setUser(addedUser);
+      history.push("/");
+    };
+    addUser();
   };
 
   return (
@@ -59,13 +62,7 @@ export default function Register (props) {
             <h3>Submit</h3>
           </button>
         </form>
-        <p>
-          Already have an account?&nbsp;
-          <Link to="/sign-in" className="sign-in-link">
-            Sign in
-          </Link>
-        </p>
       </section>
     </Layout>
   );
-};
+}

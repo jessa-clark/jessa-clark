@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { useParams, Redirect } from "react-router-dom";
+import { useParams, Redirect, useHistory } from "react-router-dom";
 import { verify } from "../../Services/users";
-import { getOneProject, updateProject } from "../../Services/projects";
+import { deleteProject, getOneProject, updateProject } from "../../Services/projects";
 import "./EditProject.css";
 
 const EditProject = (props) => {
@@ -17,11 +17,12 @@ const EditProject = (props) => {
   const [isUpdated, setUpdated] = useState(false);
   const [userBool, setUserBool] = useState(null);
   let { id } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     const fetchProject = async () => {
       const project = await getOneProject(id);
-      setProject(project);
+      setProject(id, project);
     };
     const checkUser = async () => {
       const userExists = await verify();
@@ -39,10 +40,22 @@ const EditProject = (props) => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const updated = await updateProject(id, project);
-    setUpdated({ updated });
+    const editProject = async () => {
+      const updated = await updateProject(id, project);
+      setUpdated({ updated });
+    }
+    editProject();
+  }
+
+
+  const handleDelete = () => {
+    const deleteOneProject = async () => {
+      await deleteProject(id);
+        history.push("/projects");
+    };
+    deleteOneProject();
   };
 
   if (isUpdated) {
@@ -108,7 +121,7 @@ const EditProject = (props) => {
             autoFocus
             onChange={handleChange}
           />
-          <form
+          <div
             className="project-description-container"
             onSubmit={handleSubmit}
           >
@@ -126,7 +139,7 @@ const EditProject = (props) => {
             <button type="submit" className="add-button">
               <h3>Submit</h3>
             </button>
-          </form>
+          </div>
         </form>
       </div>
     </div>
