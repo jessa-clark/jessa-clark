@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
-import { Link, Route, useParams } from "react-router-dom"
-import CreateProject from "../../Components/CreateProject/CreateProject"
-import EditProject from "../../Components/EditProject/EditProject"
+import { Redirect, useParams } from "react-router-dom"
+import CreateProject from "../CreateProject/CreateProject"
 import Layout from "../../Components/Layout/Layout"
 import SignUp from "../../Components/SignUp/SignUp"
 import { verify } from "../../Services/users"
@@ -19,11 +18,13 @@ function Admin(props) {
   checkUser();
 }, [id, userBool]);
 
-  return (
+return !userBool && userBool !== null ?(
+  <Redirect to="/" />
+) : (
     <Layout>
     <div>
-    <CreateProject />
-    <SignUp setUser={props.setUser}/>
+    <CreateProject user={props.user} setUser={props.setUser}/>
+    <SignUp setUser={props.setUser} user={props.user}/>
     </div>
     </Layout>
   )

@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { verify } from "./Services/users";
 import ProjectDetails from "./Screens/ProjectDetails/ProjectDetails";
 import EditProject from "./Components/EditProject/EditProject";
-import SignOut from "./Components/SignOut/SignOut";
+import SignOut from "./Screens/SignOut/SignOut"
 
 function App() {
   const [user, setUser] = useState(null);
@@ -27,20 +27,20 @@ function App() {
         <Route exact path="/">
           <Home user={user}/>
         </Route>
-        <Route path="/login">
+        <Route exact path="/login">
           <Login user={user} setUser={setUser}/>
         </Route>
-        <Route path="/sign-out">
+        <Route exact path="/sign-out">
           <SignOut setUser={setUser}/>
         </Route>
-        <Route path="/admin">
-          <Admin user={user} />
+        <Route exact path="/admin">
+          <Admin user={user} setUser={setUser}/>
         </Route>
-        <Route path="/projects/edit/:id">
+        <Route exact path="/projects/edit/:id">
           <EditProject user={user} />
         </Route>
-        <Route path="/projects/:id">
-          <ProjectDetails user={user} setUser={setUser}/>
+        <Route exact path="/projects/:id">
+          <ProjectDetails user={user} />
         </Route>
       </Switch>
     </div>

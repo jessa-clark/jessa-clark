@@ -62,10 +62,9 @@ const EditProject = (props) => {
     return <Redirect to={`/projects/${id}`} />;
   }
 
-  // return !userBool && userBool !== null ?(
-  //   <Redirect to="/login" />
-  // ) : (
-  return (
+  return !userBool && userBool !== null ?(
+    <Redirect to="/" />
+  ) : (
     <div>
       <div className="heading-wine-add">
         <h3>Changes are Good!🌀</h3>
@@ -131,13 +130,16 @@ const EditProject = (props) => {
             <textarea
               className="textarea-description"
               value={project.content}
-              name="description"
+              name="content"
               required
               autoFocus
               onChange={handleChange}
             />
-            <button type="submit" className="add-button">
-              <h3>Submit</h3>
+            <button type="update" className="add-button">
+              Submit
+            </button>
+            <button type="delete" className="delete-button" onClick={handleDelete}>
+              Delete
             </button>
           </div>
         </form>

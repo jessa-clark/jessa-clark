@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { Link, NavLink, useHistory, useParams } from 'react-router-dom'
 import Layout from '../../Components/Layout/Layout';
 import { getAllProjects, getOneProject } from '../../Services/projects';
+import { verify } from '../../Services/users';
+
 
 function ProjectDetails(props) {
   // const { id, title, image_url, github_url, deployed_url, specs, content } = props;
   const [project, setProject] = useState({});
+  const [userExists, setUserExists] = useState(null);
   const [projects, setProjects] = useState([])
   const { id } = useParams()
-  const [toggleFetch, setToggleFetch] = useState(false);
   const history = useHistory();
 
 
@@ -22,12 +24,20 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  const fetchProjects = async () => {
-    const results = await getAllProjects();
-    setProjects(results);
+  const checkSigned = async () => {
+    const valid = await verify();
+    setUserExists(valid ? true : false);
   };
-  fetchProjects();
+  checkSigned();
 }, []);
+
+// useEffect(() => {
+//   const fetchProjects = async () => {
+//     const results = await getAllProjects();
+//     setProjects(results);
+//   };
+//   fetchProjects();
+// }, []);
 
 
   return (
@@ -52,9 +62,11 @@ useEffect(() => {
           <div>
             {project.content}
           </div>
-    <Link to={`/projects/edit/${id}`}>
-      <p>edit project</p>
-    </Link>
+          {userExists ? (
+    <Link to={`/projects/edit/${id}`}>edit project</Link>
+          ) : (
+            null
+          )}
     </section>
   </Layout>
   )

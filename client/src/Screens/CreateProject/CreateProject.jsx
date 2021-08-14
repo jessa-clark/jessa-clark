@@ -5,9 +5,16 @@ import { createProject } from "../../Services/projects";
 import "./CreateProject.css";
 
 const CreateProject = (props) => {
-  const [project, setProject] = useState({
+    const [project, setProject] = useState({
+      title: "",
+      image_url: "",
+      deployed_url: "",
+      github_url: "",
+      specs: "",
+      content: "",
+      user_id: props.user.id,
+    });
 
-  });
 
   const [isCreated, setCreated] = useState(false);
   const [userBool, setUserBool] = useState(null);
@@ -37,14 +44,13 @@ const CreateProject = (props) => {
     addProject();
   };
 
-  // if(isCreated) {
-  //   return <Redirect to={`/projects`} />;
-  // }
+  if(isCreated) {
+    return <Redirect to={`/projects`} />;
+  }
 
-  // return !userBool && userBool !== null ?(
-  //   <Redirect to="/login" />
-  // ) : (
-    return (
+  return !userBool && userBool !== null ?(
+    <Redirect to="/login" />
+  ) : (
     <div>
     <div className="heading-wine-add">
       <h3>Get it 💅</h3>
@@ -59,7 +65,7 @@ const CreateProject = (props) => {
         <textarea
           className="textarea-description"
           value={project.content}
-          name="description"
+          name="content"
           required
           autoFocus
           onChange={handleChange}
@@ -100,7 +106,7 @@ const CreateProject = (props) => {
         <input
           className="input-github-link"
           value={project.github_url}
-          name="git_url"
+          name="github_url"
           required
           autoFocus
           onChange={handleChange}
