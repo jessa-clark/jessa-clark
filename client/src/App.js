@@ -8,6 +8,8 @@ import { verify } from "./Services/users";
 import ProjectDetails from "./Screens/ProjectDetails/ProjectDetails";
 import EditProject from "./Components/EditProject/EditProject";
 import SignOut from "./Screens/SignOut/SignOut"
+import CommentForm from "./Components/CommentForm/CommentForm";
+import AllProjects from "./Screens/AllProjects/AllProjects";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -36,11 +38,17 @@ function App() {
         <Route exact path="/admin">
           <Admin user={user} setUser={setUser}/>
         </Route>
+        <Route path="/projects">
+          <AllProjects user={user}/>
+        </Route>
         <Route exact path="/projects/edit/:id">
           <EditProject user={user} />
         </Route>
         <Route exact path="/projects/:id">
           <ProjectDetails user={user} />
+        </Route>
+        <Route exact path="/projects/:id/comments">
+          <CommentForm user={user} />
         </Route>
       </Switch>
     </div>

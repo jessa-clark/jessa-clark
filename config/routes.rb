@@ -6,5 +6,6 @@ post "/users/login", to: "users#login"
 resources :users
 
 resources :projects
+
 resources :comments
 end

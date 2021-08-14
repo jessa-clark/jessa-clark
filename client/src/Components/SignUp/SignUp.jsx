@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Link, Route, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { register } from "../../Services/users";
-import Layout from "../../Components/Layout/Layout";
 import "./SignUp.css";
 
 export default function Register(props) {

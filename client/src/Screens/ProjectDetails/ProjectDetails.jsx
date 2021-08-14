@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink, useHistory, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import CommentForm from '../../Components/CommentForm/CommentForm';
 import Layout from '../../Components/Layout/Layout';
-import { getAllProjects, getOneProject } from '../../Services/projects';
+import { getOneProject } from '../../Services/projects';
 import { verify } from '../../Services/users';
 
 
@@ -9,9 +10,9 @@ function ProjectDetails(props) {
   // const { id, title, image_url, github_url, deployed_url, specs, content } = props;
   const [project, setProject] = useState({});
   const [userExists, setUserExists] = useState(null);
-  const [projects, setProjects] = useState([])
+  // const [projects, setProjects] = useState([])
   const { id } = useParams()
-  const history = useHistory();
+  // const history = useHistory();
 
 
 
@@ -68,6 +69,7 @@ useEffect(() => {
             null
           )}
     </section>
+    <CommentForm project={props.project} setProject={props.setProject}/>
   </Layout>
   )
 }

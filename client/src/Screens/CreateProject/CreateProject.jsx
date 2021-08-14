@@ -12,7 +12,7 @@ const CreateProject = (props) => {
       github_url: "",
       specs: "",
       content: "",
-      user_id: props.user.id,
+      user_id: props.user.id
     });
 
 
@@ -45,7 +45,7 @@ const CreateProject = (props) => {
   };
 
   if(isCreated) {
-    return <Redirect to={`/projects`} />;
+    return <Redirect to="/home" />;
   }
 
   return !userBool && userBool !== null ?(

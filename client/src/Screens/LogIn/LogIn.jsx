@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { login, verify } from '../../Services/users';
+import { login } from '../../Services/users';
 import Layout from '../../Components/Layout/Layout'
 import "./LogIn.css"
 
