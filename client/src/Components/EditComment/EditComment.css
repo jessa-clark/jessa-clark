@@ -1,0 +1,119 @@
+.comment-screen-container {
+  background: url('../../AStyles/images/admin.png');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-form-text {
+  color: #ffee34;
+  font-size: 5vw;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  font-family: "Bangers", cursive;
+  margin-left: 9vw;
+  margin-right: 9vw;
+  margin-top: 10vh;
+  width: 6em;
+  padding-top: 0;
+}
+
+
+.edit-comment-form {
+  margin-top: 20vh;
+  background-color: #ff92c2;
+  width: 35vw;
+  height: 50vh;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+}
+
+.name-comment {
+  margin-top: 2vh;
+  display: grid;
+  grid-template-areas: 
+  "A" "B",
+  "C" "D";
+  row-gap: 8vh;
+}
+
+.name-public {
+  grid-area: "A";
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+  margin-top: 8vh;
+}
+
+.input-name {
+  grid-area: "B";
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+  height: 4vh;
+  margin-top: 8vh;
+  border-radius: 5px;
+  font-family: "gudea", sans-serif;
+  font-size: 1vw;
+}
+
+.comment {
+  grid-area: "C";
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+}
+
+.input-comment {
+  grid-area: D;
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+  font-family: "gudea", sans-serif;
+  font-size: 1vw;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: row;
+}
+.edit-button {
+  margin-top: 13vh;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #00bfff;
+  color: white;
+  font-family: 'gudea', sans-serif;
+  font-size: 20px;
+  border: none;
+  box-shadow: none;
+  width: 10vw;
+  height: 5vh;
+}
+
+.delete-button {
+  margin-top: 13vh;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #00bfff;
+  color: white;
+  font-family: 'gudea', sans-serif;
+  font-size: 20px;
+  border: none;
+  box-shadow: none;
+  width: 10vw;
+  height: 5vh;
+}

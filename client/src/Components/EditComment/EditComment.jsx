@@ -2,13 +2,18 @@ import { useState, useEffect } from "react";
 import { useParams, Redirect, useHistory } from "react-router-dom";
 import { verify } from "../../Services/users";
 import "./EditComment.css";
-import { deleteComment, getOneComment, updateComment } from "../../Services/comments";
+import {
+  deleteComment,
+  getOneComment,
+  updateComment,
+} from "../../Services/comments";
+import Layout from "../Layout/Layout";
 
 const EditComment = (props) => {
   const [comment, setComment] = useState({
     name: "",
     comment: "",
-    project_id: ""
+    project_id: "",
   });
 
   const [isUpdated, setUpdated] = useState(false);
@@ -26,7 +31,7 @@ const EditComment = (props) => {
       setUserBool(userExists ? true : false);
     };
     checkUser();
-    fetchComment()
+    fetchComment();
   }, [id, userBool]);
 
   const handleChange = (e) => {
@@ -34,7 +39,7 @@ const EditComment = (props) => {
     setComment({
       ...comment,
       [name]: value,
-      project_id: props.project_id
+      project_id: props.project_id,
     });
   };
 
@@ -43,19 +48,18 @@ const EditComment = (props) => {
     const editComment = async () => {
       const updatedComment = await updateComment(props.project_id, id, comment);
       setUpdated({ updatedComment });
-      history.push(`/projects/${props.project_id}`)
-    }
+      history.push(`/projects/${props.project_id}`);
+    };
     editComment();
-  }
-
+  };
 
   const handleDelete = () => {
     const deleteOneComment = async () => {
       await deleteComment(props.project_id, id);
       setTimeout(() => {
         history.push(`/projects/${id}`);
-      }, 500)
-    }
+      }, 500);
+    };
     deleteOneComment();
   };
 
@@ -63,38 +67,60 @@ const EditComment = (props) => {
   //   return <Redirect to="/projects"/>;
   // }
 
-  return !userBool && userBool !== null ?(
+  return !userBool && userBool !== null ? (
     <Redirect to="/" />
   ) : (
-    <div>
-        <section className="comment-form">
-        <h3>Update/Destroy Comments</h3>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name</label>
-          <input
-            type="name"
-            name="name"
-            id="name"
-            value={comment.name}
-            onChange={handleChange}
-          />
-          <label htmlFor="comment">Comment</label>
-          <input
-            type="comment"
-            name="comment"
-            id="comment"
-            value={comment.comment}
-            onChange={handleChange}
-          />
-            <button type="update" className="edit-button">
+    <Layout>
+      <div className="comment-screen-container">
+        <section className="comment-form-text">
+          <h3>Update/Destroy Comments</h3>
+        </section>
+        <section className="edit-comment-form">
+          <form onSubmit={handleSubmit}>
+            <div className="name-comment">
+              <label className="name-public" htmlFor="name">
+                Name
+              </label>
+              <input
+                className="input-name"
+                type="name"
+                name="name"
+                id="name"
+                value={comment.name}
+                onChange={handleChange}
+              />
+              <label className="comment" htmlFor="comment">
+                Comment
+              </label>
+              <textarea
+                className="input-comment"
+                type="comment"
+                name="comment"
+                id="comment"
+                value={comment.comment}
+                onChange={handleChange}
+              />
+            </div>
+          </form>
+          <div className="button-div">
+            <button
+              type="update"
+              className="edit-button"
+              onClick={handleSubmit}
+            >
               Edit
             </button>
-            <button type="delete" className="delete-button" onClick={handleDelete}>
+            <button
+              type="delete"
+              className="delete-button"
+              onClick={handleDelete}
+            >
               Delete
             </button>
-        </form>
-      </section>
-    </div>
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 
