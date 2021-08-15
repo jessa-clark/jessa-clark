@@ -52,17 +52,60 @@ const CreateProject = (props) => {
   return !userBool && userBool !== null ?(
     <Redirect to="/login" />
   ) : (
-    <div>
-    <div className="heading-wine-add">
+    <div className="create-project-container">
+    <div className="heading-project-add">
       <h3>Get it 💅</h3>
     </div>
     <div className="add-form-container">
-      {/* <div className="add-image-container">
-      <p className="image-preview">image preview</p>
-        <img className="wine-image" src={wine.imgURL} alt={wine.name} />
-      </div> */}
+      <form className="add-form" onSubmit={handleSubmit}>
+        <label className="title-label">Title:</label>
+        <input
+          className="input-title"
+          value={project.title}
+          name="title"
+          required
+          autoFocus
+          onChange={handleChange}
+        />
+        <label className="image-link-label">Image URL:</label>
+        <input
+          className="input-image-link"
+          value={project.image_url}
+          name="image_url"
+          required
+          autoFocus
+          onChange={handleChange}
+        />
+        <label className="deployed-link-label">Deployed URL:</label>
+        <input
+          className="input-deployed-link"
+          value={project.deployed_url}
+          name="deployed_url"
+          required
+          autoFocus
+          onChange={handleChange}
+        />
+        <label className="github-link-label">GitHub URL:</label>
+        <input
+          className="input-github-link"
+          value={project.github_url}
+          name="github_url"
+          required
+          autoFocus
+          onChange={handleChange}
+        />
+        <label className="specs-label">Stack:</label>
+        <input
+          className="input-specs"
+          value={project.specs}
+          name="specs"
+          required
+          autoFocus
+          onChange={handleChange}
+        />
+      </form>
       <form className="project-description-container" onSubmit={handleSubmit}>
-        <label className="project-description-label">Project Description</label>
+        <label className="project-description-label">Description:</label>
         <textarea
           className="textarea-description"
           value={project.content}
@@ -74,53 +117,6 @@ const CreateProject = (props) => {
         <button type="submit" className="add-button">
           <h3>Submit</h3>
         </button>
-      </form>
-      <form className="add-form" onSubmit={handleSubmit}>
-        <label className="title-label">Title</label>
-        <input
-          className="input-title"
-          value={project.title}
-          name="title"
-          required
-          autoFocus
-          onChange={handleChange}
-        />
-        <label className="image-link-label">Image URL</label>
-        <input
-          className="input-image-link"
-          value={project.image_url}
-          name="image_url"
-          required
-          autoFocus
-          onChange={handleChange}
-        />
-        <label className="deployed-link-label">Deployed URL</label>
-        <input
-          className="input-deployed-link"
-          value={project.deployed_url}
-          name="deployed_url"
-          required
-          autoFocus
-          onChange={handleChange}
-        />
-        <label className="github-link-label">GitHub URL</label>
-        <input
-          className="input-github-link"
-          value={project.github_url}
-          name="github_url"
-          required
-          autoFocus
-          onChange={handleChange}
-        />
-        <label className="specs-label">Specs</label>
-        <input
-          className="input-specs"
-          value={project.specs}
-          name="specs"
-          required
-          autoFocus
-          onChange={handleChange}
-        />
       </form>
     </div>
   </div>

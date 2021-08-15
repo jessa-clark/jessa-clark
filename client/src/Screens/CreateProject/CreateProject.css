@@ -1,0 +1,169 @@
+.create-project-container {
+  margin-top: 20vh;
+  background-color: #ff92c2;
+  width: 60vw;
+  height: 100vh;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.heading-project-add {
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+  color: white;
+  text-align: center;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+  -1px -1px 0 #000;
+}
+.add-form {
+  display: grid;
+  grid-template-areas:
+  "A B"
+  "C D"
+  "E F"
+  "G H"
+  "I J";
+  row-gap: 20px;
+  column-width: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-label {
+  grid-area: A;
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+  margin: 0;
+}
+
+.input-title {
+  grid-area: B;
+  background-color: #ff92c2;
+  border: none;
+  height: 4vh;
+  border-radius: 5px;
+  width: 20vw;
+  font-family: "gudea", sans-serif;
+  font-size: 1vw;
+}
+
+.image-link-label {
+  grid-area: C;
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+
+}
+
+.input-image-link {
+  grid-area: D;
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+  height: 4vh;
+  border-radius: 5px;
+  font-family: "gudea", sans-serif;
+  font-size: 1vw;
+}
+
+.deployed-link-label {
+  grid-area: E;
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+}
+
+.input-deployed-link {
+  grid-area: F;
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+  height: 4vh;
+  border-radius: 5px;
+  font-family: "gudea", sans-serif;
+  font-size: 1vw;
+}
+
+.github-link-label {
+  grid-area: G;
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+}
+
+.input-github-link {
+  grid-area: H;
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+  height: 4vh;
+  border-radius: 5px;
+  font-family: "gudea", sans-serif;
+  font-size: 1vw;
+}
+
+.specs-label {
+  grid-area: I;
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+}
+
+.input-specs {
+  grid-area: J;
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+  height: 4vh;
+  border-radius: 5px;
+  font-family: "gudea", sans-serif;
+  font-size: 1vw;
+}
+
+
+.project-description-container {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  font-family: "gudea", sans-serif;
+  font-size: 1vw;
+  text-align: center;
+}
+
+.project-description-label {
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+  width: 1vw;
+  margin-left: 8vw;
+  text-align: center;
+}
+
+.textarea-description {
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+  display: block;
+  margin-left: 15.2vw;
+  height: 4vh;
+  border-radius: 5px;
+  font-family: "gudea", sans-serif;
+  font-size: 1vw;
+  height: 20vh;
+}
+
+.add-button {
+  margin-top: 14vh;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #00bfff;
+  color: white;
+  font-family: 'gudea', sans-serif;
+  font-size: 20px;
+  border: none;
+  box-shadow: none;
+  width: 10vw;
+  height: 8vh;
+}
