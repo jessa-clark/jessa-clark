@@ -14,11 +14,11 @@ function ProjectDetails() {
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchProject = async (id) => {
+    const fetchProject = async () => {
       const project = await getOneProject(id);
       setProject(project);
     };
-    fetchProject(id);
+    fetchProject();
   }, []);
 
   useEffect(() => {

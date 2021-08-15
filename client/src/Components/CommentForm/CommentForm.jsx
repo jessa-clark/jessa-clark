@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Redirect, useParams } from "react-router-dom";
+import { Redirect, useParams, useHistory } from "react-router-dom";
 import { createComment } from "../../Services/comments";
+import { verify } from "../../Services/users";
 import "./CommentForm.css";
 
 export default function CommentForm(props) {
@@ -13,6 +14,8 @@ export default function CommentForm(props) {
   
   // setComment({...comment, project_id: props.id})
   const [isCreated, setCreated] = useState(false)
+  const [userExists, setUserExists] = useState(null);
+  const history = useHistory();
 
 
   const handleChange = (e) => {
@@ -24,13 +27,22 @@ export default function CommentForm(props) {
     const addComment = async () => {
       const addedComment = await createComment(props.project_id, comment);
       setCreated( {addedComment} );
+      history.push(`/projects/${props.project_id}`)
     };
-    addComment()
+    addComment(props.project_id)
   }
 
-  if(isCreated) {
-    return <Redirect to={`/projects/${props.project_id}`} />;
-  }
+  useEffect(() => {
+    const checkSigned = async () => {
+      const valid = await verify();
+      setUserExists(valid ? true : false);
+    };
+    checkSigned();
+  }, []);
+
+  // if(isCreated) {
+  //   return <Redirect to={`/projects/${props.project_id}`} />;
+  // }
 
   return (
     <div>

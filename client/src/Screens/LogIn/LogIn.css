@@ -1,0 +1,96 @@
+.sign-in-screen-container {
+  background: url('../../AStyles/images/admin.png');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+.sign-in-screen-text {
+  color: #ffee34;
+  font-size: 5vw;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  font-family: "Bangers", cursive;
+  margin-left: 9vw;
+  margin-right: 9vw;
+  margin-top: 10vh;
+  width: 5em;
+  padding-top: 0;
+}
+
+
+.sign-in-screen-form {
+  margin-top: 20vh;
+  background-color: #ff92c2;
+  width: 35vw;
+  height: 50vh;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+}
+
+.user-password {
+  margin-top: 2vh;
+  display: grid;
+  grid-template-areas: 
+  "A" "B",
+  "C" "D";
+  row-gap: 8vh;
+}
+
+.user-name {
+  grid-area: "A";
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+  margin-top: 8vh;
+}
+
+.user-input {
+  grid-area: "B";
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+  height: 4vh;
+  margin-top: 8vh;
+  border-radius: 5px;
+
+}
+
+.password {
+  grid-area: "C";
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+}
+
+.password-input {
+  grid-area: D;
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+}
+
+.sign-in-button {
+  margin-top: 13vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #00bfff;
+  color: white;
+  font-family: 'gudea', sans-serif;
+  font-size: 20px;
+  border: none;
+  box-shadow: none;
+  padding: 2;
+  width: 10vw;
+
+}

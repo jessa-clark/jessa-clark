@@ -59,7 +59,7 @@ const EditProject = (props) => {
   };
 
   if (isUpdated) {
-    return <Redirect to={`/projects/${props.project_id}/comments${id}`} />;
+    return <Redirect to={`/projects/${id}`} />;
   }
 
   return !userBool && userBool !== null ?(
