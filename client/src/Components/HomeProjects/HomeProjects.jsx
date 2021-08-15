@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { getAllProjects } from "../../Services/projects";
-import ProjectCard from "../../Components/ProjectCard/ProjectCard"
-import "./AllProjects.css";
+import ProjectCard from "../ProjectCard/ProjectCard"
+import "./HomeProjects.css";
 
 
-const AllProjects = (props) => {
+const HomeProjects = (props) => {
   const [projects, setProjects] = useState([]);
   
   
@@ -27,4 +27,4 @@ const AllProjects = (props) => {
   )
 };
 
-export default AllProjects;
+export default HomeProjects;

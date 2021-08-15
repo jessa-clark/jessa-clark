@@ -12,7 +12,7 @@ const CreateProject = (props) => {
       github_url: "",
       specs: "",
       content: "",
-      user_id: props.user.id
+      user_id: props.user_id
     });
 
 
@@ -32,20 +32,21 @@ const CreateProject = (props) => {
     setProject({
       ...project,
       [name]: value,
+      user_id: props.user_id
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const addProject = async () => {
-      const created = await createProject(project);
+    const addProject = async (id) => {
+      const created = await createProject(id, project);
       setCreated({ created });
     }
     addProject();
   };
 
   if(isCreated) {
-    return <Redirect to="/home" />;
+    return <Redirect to="/projects" />;
   }
 
   return !userBool && userBool !== null ?(

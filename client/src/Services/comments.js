@@ -1,17 +1,17 @@
 import api from './config'
 
-export const getAllComments = async () => {
-  const res = await api.get('/comments')
+export const getAllComments = async (projectID) => {
+  const res = await api.get(`/projects/${projectID}/comments`)
   return res.data;
 };
 
-export const getOneComment = async (id) => {
-  const res = await api.get(`/comments/${id}`);
+export const getOneComment = async (projectID, id) => {
+  const res = await api.get(`projects/${projectID}/comments/${id}`);
   return res.data
 };
 
-export const createComment = async (id, commentData) => {
-  const res = await api.post(`projects/${id}/comments`, { comment: commentData });
+export const createComment = async (projectID, commentData) => {
+  const res = await api.post(`projects/${projectID}/comments`, { comment: commentData });
   return res.data
 };
 

@@ -70,7 +70,7 @@ return (
       {showMenu ?  <div className="mobile-navbar-right-container">
         <Link to="/" className="nav-link">Home</Link>
         <Link to="/skills" className="nav-link">Skills</Link>
-        <Link to="/projects/1" className="nav-link">Projects</Link> 
+        <Link to="/projects" className="nav-link">Projects</Link> 
         {userExists ? (
           <>
             <Link to="/admin" className="nav-link">Admin</Link>

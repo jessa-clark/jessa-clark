@@ -4,15 +4,17 @@ import CreateProject from "../CreateProject/CreateProject"
 import Layout from "../../Components/Layout/Layout"
 import SignUp from "../../Components/SignUp/SignUp"
 import { verify } from "../../Services/users"
+import CommentTable from "../../Components/CommentTable/CommentTable"
 
 
 function Admin(props) {
   let { id } = useParams();
   const [userBool, setUserBool] = useState(null)
+  
 
   useEffect(() => {
     const checkUser = async () => {
-      const userExists = await verify();
+      const userExists = await verify(id);
       setUserBool(userExists ? true : false);
   };
   checkUser();

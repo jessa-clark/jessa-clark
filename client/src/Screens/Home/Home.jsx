@@ -1,11 +1,11 @@
 import React from 'react'
-import AllProjects from '../../Components/AllProjects/AllProjects'
+import HomeProjects from '../../Components/HomeProjects/HomeProjects'
 import Layout from '../../Components/Layout/Layout'
 
 function Home() {
   return (
   <Layout>
-    <AllProjects />
+    <HomeProjects />
   </Layout>
   )
 }

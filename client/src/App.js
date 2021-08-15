@@ -10,10 +10,12 @@ import EditProject from "./Components/EditProject/EditProject";
 import SignOut from "./Screens/SignOut/SignOut"
 import CommentForm from "./Components/CommentForm/CommentForm";
 import AllProjects from "./Screens/AllProjects/AllProjects";
+import { getOneProject } from "./Services/projects";
+import EditComment from "./Components/EditComment/EditComment";
 
 function App() {
   const [user, setUser] = useState(null);
-  
+
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -38,7 +40,7 @@ function App() {
         <Route exact path="/admin">
           <Admin user={user} setUser={setUser}/>
         </Route>
-        <Route path="/projects">
+        <Route exact path="/projects">
           <AllProjects user={user}/>
         </Route>
         <Route exact path="/projects/edit/:id">
@@ -47,8 +49,8 @@ function App() {
         <Route exact path="/projects/:id">
           <ProjectDetails user={user} />
         </Route>
-        <Route exact path="/projects/:id/comments">
-          <CommentForm user={user} />
+        <Route exact path="/projects/:id/comments/:id">
+          <EditComment user={user} />
         </Route>
       </Switch>
     </div>

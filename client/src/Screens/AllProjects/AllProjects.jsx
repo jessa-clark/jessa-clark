@@ -2,18 +2,9 @@ import { useEffect, useState } from "react";
 import { getAllProjects } from "../../Services/projects";
 import "./AllProjects.css";
 import Layout from "../../Components/Layout/Layout";
-import CommentForm from "../../Components/CommentForm/CommentForm";
 
 const AllProjects = (props) => {
   const [projects, setProjects] = useState([]);
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setProjects({
-  //     ...projects,
-  //     [name]: value,
-  //   });
-  // };
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -47,7 +38,6 @@ const AllProjects = (props) => {
           </div>
           </div>)})}
     </div>
-      <CommentForm project={props.project} setProject={props.setProject} />
     </Layout>
   );
 };
