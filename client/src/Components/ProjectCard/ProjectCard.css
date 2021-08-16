@@ -1,9 +1,13 @@
 .project {
   text-decoration: none;
-  color: white;
-  background: url("../ProjectCard/projectbackground.png")
-  max-width: 300px;
-  max-height: 300px;
+  color: #ffee0e;
+  font-family: 'bangers', cursive;
+  text-align: center;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+  -1px -1px 0 #000;
+  background-image: url("../ProjectCard/project background.png");
+  max-width: 450px;
+  max-height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -23,14 +27,16 @@
 }
 
 .project-header {
-  min-height: 70px;
+  min-height: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
 .project-header h3 {
-  font-size: 1.3rem;
+  font-size: 2vw;
+  padding: 0;
+  margin: 0;
 }
 
 .project-body-image {
@@ -41,12 +47,4 @@
 }
 .project-body-image img {
   width: 100%;
-}
-
-.project-footer p {
-  font-size: 1.1rem;
-}
-.project-footer h5 {
-  font-size: 1.2rem;
-  margin: 0;
 }
