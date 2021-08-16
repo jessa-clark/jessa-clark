@@ -1,7 +1,7 @@
 .project {
   text-decoration: none;
   color: white;
-  background-color: #ff92c2;
+  background: url("../ProjectCard/projectbackground.png")
   max-width: 300px;
   max-height: 300px;
   display: flex;
