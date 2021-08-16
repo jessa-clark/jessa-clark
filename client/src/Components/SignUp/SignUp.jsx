@@ -29,38 +29,43 @@ export default function Register(props) {
   };
 
   return (
-    <div>
-      <section className="sign-up-screen-form">
-        <h3>Register</h3>
+    <div clasName="register-container">
+    
+        <section className="sign-up-screen-form">
         <form onSubmit={handleRegister}>
-          <label htmlFor="username">Username</label>
+          <div className="user-email-password">
+          <label className="username" htmlFor="username">Username:</label>
           <input
+            className="username-input"
             type="text"
             name="username"
             id="username"
             value={newUser.username}
             onChange={handleChange}
           />
-          <label htmlFor="email">Email</label>
+          <label className="email" htmlFor="email">Email:</label>
           <input
+          className="email-input"
             type="email"
             name="email"
             id="email"
             value={newUser.email}
             onChange={handleChange}
           />
-          <label htmlFor="password">Password</label>
+          <label className="register-password" htmlFor="password">Password:</label>
           <input
+          className="password-input"
             type="password"
             name="password"
             id="password"
             value={newUser.password}
             onChange={handleChange}
           />
-          <button type="submit">
+          </div>
+        </form>
+          <button className="register-button" type="submit" onClick={handleRegister}>
             <h3>Submit</h3>
           </button>
-        </form>
       </section>
     </div>
   );

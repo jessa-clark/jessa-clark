@@ -1,0 +1,112 @@
+.register-container {
+  margin-top: 0;
+  background-color: #ff92c2;
+  width: 60vw;
+  height: auto;
+  border: 1px solid;
+  padding: 0;
+  box-shadow: 10px 10px;
+  display: grid;
+  grid-template-areas: 
+  ". A"
+  "B .";
+}
+
+
+.sign-up-screen-text {
+  grid-area: A;
+  color: #ffee34;
+  font-size: 5vw;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  font-family: "Bangers", cursive;
+  width: 5em;
+margin: 0;
+padding: 0;
+}
+
+
+.sign-up-screen-form {
+  grid-area: B;
+  background-color: #ff92c2;
+  width: 35vw;
+  height: 55vh;
+  border: 1px solid;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  box-shadow: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.user-email-password {
+  margin-top: 2vh;
+  display: grid;
+  grid-template-areas: 
+  "A B"
+  "C D"
+  "E F";
+  row-gap: 8vh;
+}
+
+.username {
+  grid-area: A;
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+  margin-top: 8vh;
+}
+
+.username-input {
+  grid-area: B;
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+  height: 4vh;
+  margin-top: 8vh;
+  border-radius: 5px;
+
+}
+
+.email {
+  grid-area: C;
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+}
+
+.email-input {
+  grid-area: D;
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+}
+
+.register-password {
+  grid-area: E;
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+}
+
+.password-input {
+  grid-area: F;
+  width: 20vw;
+  background-color: #ff92c2;
+  border: none;
+}
+
+.register-button {
+  margin-top: 8vh;
+  top: 50%;
+  margin-left: 18vw;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #00bfff;
+  color: white;
+  font-family: 'gudea', sans-serif;
+  font-size: 20px;
+  border: none;
+  box-shadow: none;
+  padding: 2;
+  width: 10vw;
+  margin-bottom: 10vh;
+}

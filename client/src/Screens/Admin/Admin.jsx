@@ -24,15 +24,20 @@ function Admin(props) {
   ) : (
     <Layout>
       <div className="admin-container">
-        <div className="admin-text">
-          <h2>Admin Page</h2>
+        <div className="body-container">
+          <div className="admin-text">
+            <h2>Admin Page</h2>
+          </div>
+          <div className="create-project">
+            <CreateProject user={props.user} setUser={props.setUser} />
+          </div>
         </div>
-        <div className="create-project">
-          <CreateProject user={props.user} setUser={props.setUser} />
-        </div>
-        <div className="register">
-          <SignUp setUser={props.setUser} user={props.user} />
-        </div>
+          <section className="sign-up">
+            <div className="register-title"><h2>Register</h2></div>
+            <div className="sign-up-component">
+            <SignUp setUser={props.setUser} user={props.user} />
+            </div>
+          </section>
       </div>
     </Layout>
   );

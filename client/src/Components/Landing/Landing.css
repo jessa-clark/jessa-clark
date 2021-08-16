@@ -1,0 +1,18 @@
+.landing-image {
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+.landing-image-container {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}

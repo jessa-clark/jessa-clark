@@ -54,7 +54,7 @@ const CreateProject = (props) => {
   ) : (
     <div className="create-project-container">
     <div className="heading-project-add">
-      <h3>Get it 💅</h3>
+      <h2>Project Add</h2>
     </div>
     <div className="add-form-container">
       <form className="add-form" onSubmit={handleSubmit}>
@@ -106,7 +106,7 @@ const CreateProject = (props) => {
       </form>
       <form className="project-description-container" onSubmit={handleSubmit}>
         <label className="project-description-label">Description:</label>
-        <textarea
+        <input
           className="textarea-description"
           value={project.content}
           name="content"
@@ -115,7 +115,7 @@ const CreateProject = (props) => {
           onChange={handleChange}
         />
         <button type="submit" className="add-button">
-          <h3>Submit</h3>
+          <h3>Get it 💅</h3>
         </button>
       </form>
     </div>
