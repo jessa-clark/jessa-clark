@@ -17,12 +17,14 @@ const HomeProjects = (props) => {
   }, []);
 
   return (
+    <div className="home-project-container">
     <div className="all-projects">
       {projects.map((project) => {
         return(
           <ProjectCard key={project.id} project={project} />
         )
       })}
+    </div>
     </div>
   )
 };

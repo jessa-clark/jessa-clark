@@ -49,8 +49,8 @@ function App() {
         <Route exact path="/projects/:id">
           <ProjectDetails user={user} />
         </Route>
-        <Route exact path="/projects/:id/comments/:id">
-          <EditComment user={user} />
+        <Route exact path="/projects/:project_id/comments/:id">
+          <EditComment user={user}/>
         </Route>
       </Switch>
     </div>

@@ -1,13 +1,11 @@
-import React from 'react';
-import hero from "../../AStyles/images/hero1.png"
+import React from "react";
+
 
 function MyLandingPage() {
-    return (
-        <div className="landing-image-container">
-
-        <img className="landing-image" src={hero} />
-
-        </div>
-    );
+  return (
+    <div className="landing-image-container">
+      {/* <img src={hero}/> */}
+    </div>
+  );
 }
-export default MyLandingPage
+export default MyLandingPage;

@@ -1,4 +1,14 @@
-.landing-image {
+.landing-image1 {
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+.landing-image2 {
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -9,10 +19,11 @@
 }
 
 .landing-image-container {
-  max-width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   padding: 0;
   margin: 0;
 }
+

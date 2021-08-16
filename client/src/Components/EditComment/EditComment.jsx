@@ -10,10 +10,11 @@ import {
 import Layout from "../Layout/Layout";
 
 const EditComment = (props) => {
+  console.log(props.project_id)
   const [comment, setComment] = useState({
     name: "",
     comment: "",
-    project_id: "",
+    project_id: props.project_id,
   });
 
   const [isUpdated, setUpdated] = useState(false);
@@ -48,7 +49,7 @@ const EditComment = (props) => {
     const editComment = async () => {
       const updatedComment = await updateComment(props.project_id, id, comment);
       setUpdated({ updatedComment });
-      history.push(`/projects/${props.project_id}`);
+      history.push("/projects");
     };
     editComment();
   };
@@ -57,7 +58,7 @@ const EditComment = (props) => {
     const deleteOneComment = async () => {
       await deleteComment(props.project_id, id);
       setTimeout(() => {
-        history.push(`/projects/${id}`);
+        history.push("/projects");
       }, 500);
     };
     deleteOneComment();
