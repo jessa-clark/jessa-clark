@@ -5,18 +5,17 @@ import { verify } from "../../Services/users";
 import "./CommentForm.css";
 
 export default function CommentForm(props) {
-  console.log(props.project_id)
+  console.log(props.project_id);
   const [comment, setComment] = useState({
     name: "",
     comment: "",
-    project_id: props.project_id
+    project_id: props.project_id,
   });
-  
+
   // setComment({...comment, project_id: props.id})
-  const [isCreated, setCreated] = useState(false)
+  const [isCreated, setCreated] = useState(false);
   const [userExists, setUserExists] = useState(null);
   const history = useHistory();
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,11 +25,11 @@ export default function CommentForm(props) {
   const handleComment = () => {
     const addComment = async () => {
       const addedComment = await createComment(props.project_id, comment);
-      setCreated( {addedComment} );
-      history.push(`/projects/${props.project_id}`)
+      setCreated({ addedComment });
+      history.push(`/projects/${props.project_id}`);
     };
-    addComment(props.project_id)
-  }
+    addComment(props.project_id);
+  };
 
   useEffect(() => {
     const checkSigned = async () => {
@@ -46,30 +45,33 @@ export default function CommentForm(props) {
 
   return (
     <div>
-      <section className="comment-form">
+      <div className="comment-form-container">
+        <div className="question">
         <h3>Questions? Comments?</h3>
-        <form onSubmit={handleComment}>
-          <label htmlFor="name">Name</label>
+        </div>
+        <form className="comment-form" onSubmit={handleComment}>
+          <label>Name</label>
+          <div className="comment-name">
+            <input
+              name="name"
+              id="name"
+              value={comment.name}
+              onChange={handleChange}
+            />
+          </div>
+          <label>Comment</label>
           <input
-            type="name"
-            name="name"
-            id="name"
-            value={comment.name}
-            onChange={handleChange}
-          />
-          <label htmlFor="comment">Comment</label>
-          <input
-            type="comment"
+            className="comment-comment"
             name="comment"
             id="comment"
             value={comment.comment}
             onChange={handleChange}
           />
-          <button type="submit">
+          <button className="comment-submit-button">
             <h3>Submit</h3>
           </button>
         </form>
-      </section>
+      </div>
     </div>
   );
 }

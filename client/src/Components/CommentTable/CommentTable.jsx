@@ -27,12 +27,16 @@ const [userExists, setUserExists] = useState(null);
 
   return (
     <div>
-      <div>
+      <div className="comment-table-container">
       {comments.map((comment) => {
         return(
-          <div>
+          <div className="comment-table">
+            <div className="comment-table-name">
           <h2>{comment.name}</h2>
+          </div>
+          <div className="comment-table-comment">
           <p>{comment.comment}</p>
+          </div>
           {userExists ? (
             <Link to={`/projects/${props.project_id}/comments/${comment.id}`}>edit comment</Link>
         ) : null}

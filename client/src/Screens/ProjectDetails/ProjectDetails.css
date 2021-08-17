@@ -39,6 +39,9 @@ flex-direction: row;
   margin: auto;
   align-items:center;
   justify-content: center;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 10px 10px black;
 }
 
 .commentform-project-section {
@@ -61,6 +64,37 @@ flex-direction: row;
   width: 100%;
 }
 
+.comment-table {
+display: flex;
+background-color: #ff92c2;
+justify-content: space-evenly;
+border-bottom: 1px solid white;
+flex-direction: row !important;
+padding: 50px 0;
+height: 50%;
+margin: auto;
+align-items:center;
+border: 1px solid black;
+padding: 10px;
+box-shadow: 10px 10px black;
+color: black;
+}
+
+.comment-table-name {
+  display: flex;
+  font-family: "gudea", sans-serif;
+  margin-right: 2vw;
+  text-align: center;
+  padding: 2px;
+}
+
+.comment-table-comment {
+  display: flex;
+  font-family: "gudea", sans-serif;
+  margin-right: 2vw;
+  text-align: left;
+}
+
 .project-detail-image img {
   width: 40%;
   margin: auto;
@@ -76,16 +110,18 @@ flex-direction: row;
   text-align: center;
   flex-direction: column;
   border-width: 0.1em;
-  width: 40%;
+  width: 100%;
 }
 
 .project-detail-title {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: white;
   font-family: "bangers", cursive;
+  text-align: center;
   text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
+  margin-top: .5em;
 }
 
 .project-detail-gitHub {
@@ -100,9 +136,6 @@ text-decoration: none;
 color: black;
 }
 
-a:visited {
-  color: black;
-}
 a:hover {
 color: #ffee0e;
 }
