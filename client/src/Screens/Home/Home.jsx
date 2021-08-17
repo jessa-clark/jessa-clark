@@ -4,9 +4,10 @@ import MyLandingPage from "../../Components/Landing/Landing";
 import Layout from "../../Components/Layout/Layout";
 import hero1900 from "../Home/hero1900.png";
 import heromedia from "../Home/heromedia.png";
-import skills from "../Home/skills.png";
 import projects from "../Home/projects.png";
 import ContactCard from "../../Components/ContactCard/ContactCard";
+import Experience from "../Experience/Experience";
+
 
 function Home() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -27,14 +28,13 @@ function Home() {
           {/* // )} */}
         </div>
       </div>
-      <div className="skills-section">
-        <div className="skills-container">
-          <img src={skills} />
-        </div>
-      </div>
+    <div className="experienc-section-container">
+
+    <Experience/>
+    </div>
 
       <div
-      style={{ backgroundImage : `url('${projects}')`}} className="projects-section">
+      style={{ backgroundImage : `url('${projects}')`, width: "100vw"}} className="projects-section">
         <div className="notable-projects-text">
           <h2>Notable Projects</h2>
         </div>
