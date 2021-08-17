@@ -22,14 +22,14 @@ export default function Register(props) {
     e.preventDefault();
     const addUser = async () => {
       const addedUser = await register(newUser);
-      setUser(addedUser);
+      setNewUser(addedUser);
       history.push("/");
     };
     addUser();
   };
 
   return (
-    <div clasName="register-container">
+    <div className="register-container">
     
         <section className="sign-up-screen-form">
         <form onSubmit={handleRegister}>

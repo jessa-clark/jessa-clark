@@ -4,7 +4,7 @@
   width: 60vw;
   height: auto;
   border: 1px solid;
-  padding: 0;
+  padding: 5;
   box-shadow: 10px 10px;
   display: flex;
   flex-direction: column;
@@ -31,9 +31,7 @@
   "G H"
   "I J";
   row-gap: 20px;
-  column-width: 3rem;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: space-evenly;
 }
 
 .title-label {
@@ -41,12 +39,12 @@
   font-family: 'bangers', cursive;
   font-size: 2vw;
   margin: 0;
+  width: 2vw;
 }
 
 .input-title {
   grid-area: B;
   background-color: #ff92c2;
-  border: none;
   height: 4vh;
   border-radius: 5px;
   width: 20vw;
@@ -65,7 +63,6 @@
   grid-area: D;
   width: 20vw;
   background-color: #ff92c2;
-  border: none;
   height: 4vh;
   border-radius: 5px;
   font-family: "gudea", sans-serif;
@@ -82,7 +79,6 @@
   grid-area: F;
   width: 20vw;
   background-color: #ff92c2;
-  border: none;
   height: 4vh;
   border-radius: 5px;
   font-family: "gudea", sans-serif;
@@ -99,7 +95,6 @@
   grid-area: H;
   width: 20vw;
   background-color: #ff92c2;
-  border: none;
   height: 4vh;
   border-radius: 5px;
   font-family: "gudea", sans-serif;
@@ -116,7 +111,6 @@
   grid-area: J;
   width: 20vw;
   background-color: #ff92c2;
-  border: none;
   height: 4vh;
   border-radius: 5px;
   font-family: "gudea", sans-serif;
@@ -137,14 +131,12 @@
   font-family: 'bangers', cursive;
   font-size: 2vw;
   width: 1vw;
-  margin-left: 8vw;
   text-align: center;
 }
 
 .textarea-description {
   width: 20vw;
   background-color: #ff92c2;
-  border: none;
   display: block;
   margin-left: 15.2vw;
   height: 4vh;

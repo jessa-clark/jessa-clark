@@ -8,9 +8,7 @@ import { verify } from "./Services/users";
 import ProjectDetails from "./Screens/ProjectDetails/ProjectDetails";
 import EditProject from "./Components/EditProject/EditProject";
 import SignOut from "./Screens/SignOut/SignOut"
-import CommentForm from "./Components/CommentForm/CommentForm";
 import AllProjects from "./Screens/AllProjects/AllProjects";
-import { getOneProject } from "./Services/projects";
 import EditComment from "./Components/EditComment/EditComment";
 
 function App() {
