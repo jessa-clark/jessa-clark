@@ -1,0 +1,144 @@
+.contact-card-container {
+  background: url(../ContactCard/ContactCard.png);
+  background-size: cover;
+  width: 100vw;
+  height: auto;
+
+  display: grid;
+grid-template-areas: 
+"A B"
+"C B"
+"D B";
+}
+
+.contact-card-title {
+  grid-area: B;
+  font-family: 'bangers', cursive;
+  color: #ffee34;
+  font-size: 4vw;
+  width: 45%;
+margin-left: 3em;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+  -1px -1px 0 #000;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-container {
+grid-area: A;
+background-color: #00bfff;
+display: flex;
+flex-direction: row;
+align-items: center;
+border: 3px solid;
+padding: 10px;
+box-shadow: 10px 10px;
+margin: auto;
+width: 400px;
+margin-top: 50px;
+margin-left: 30em;
+}
+
+.email-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+
+.email-icon img {
+width: 80px;
+margin-left: 40px;
+}
+
+.email-title {
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+  line-height: 1px;
+}
+
+.email-link {
+  font-family: 'gudea', sans-serif;
+  font-size: 1vw;
+line-height: 1px;
+
+}
+
+.linkedin-container {
+grid-area: C;
+background-color: #ff92c2;
+display: flex;
+flex-direction: row;
+align-items: center;
+border: 3px solid;
+padding: 10px;
+box-shadow: 10px 10px;
+margin: auto;
+width: 400px;
+margin-top: 50px;
+margin-left: 30em;
+}
+
+.linkedin-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+
+.linkedin-icon img{
+width: 80px;
+margin-left: 40px;
+}
+
+.linkedin-title {
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+  line-height: 1px;
+}
+
+.linkedin-link {
+  font-size: 1vw;
+line-height: 1px;
+}
+
+.github-container {
+grid-area: D;
+background-color: #ffee0e;
+display: flex;
+flex-direction: row;
+align-items: center;
+border: 3px solid;
+padding: 10px;
+box-shadow: 10px 10px;
+margin: auto;
+width: 400px;
+margin-bottom: 50px;
+margin-top: 50px;
+margin-left: 30em;
+}
+
+.github-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+
+.github-icon img {
+width: 80px;
+margin-left: 40px;
+}
+
+.github-title {
+  font-family: 'bangers', cursive;
+  font-size: 2vw;
+  line-height: 1px;
+}
+
+.github-link {
+  font-size: 1vw;
+line-height: 1px;
+}

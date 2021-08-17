@@ -1,8 +1,7 @@
 .home-project-container {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   margin: 0;
-overflow: hidden;
 }
 
 .notable-projects-text {
@@ -20,7 +19,6 @@ overflow: hidden;
 
 .all-projects {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
   margin-bottom: 20vh;

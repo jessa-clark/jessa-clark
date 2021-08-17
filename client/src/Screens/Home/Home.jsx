@@ -6,6 +6,7 @@ import hero1900 from '../Home/hero1900.png'
 import heromedia from '../Home/heromedia.png'
 import skills from '../Home/skills.png'
 import projects from '../Home/projects.png'
+import ContactCard from '../../Components/ContactCard/ContactCard'
 
 
 
@@ -22,22 +23,19 @@ useEffect(() => {
 
   return (
   <Layout>
-    <section className="landing-section">
-      {/* {width < ipad ? ( */}
+    <div className="landing-section">
         <div className="landing-container">
-          {/* <img src={heromedia} />
-        </div>
-      // ) : ( */}
+
       <img src={hero1900} />
       {/* // )} */}
       </div>
-    </section>
-    <section className="skills-section">
+    </div>
+    <div className="skills-section">
       <div className="skills-container">
         <img src={skills} />
       </div>
-    </section>
-    <section style={{ backgroundImage : `url('${projects}')`}}className="projects-section">
+    </div>
+    
     <div>
       <div className="notable-projects-text">
       <h2>Notable Projects</h2>
@@ -46,7 +44,11 @@ useEffect(() => {
     <HomeProjects />
     </div>
 
-    </section>
+
+
+    <ContactCard />
+
+
 
     </Layout>
   )
