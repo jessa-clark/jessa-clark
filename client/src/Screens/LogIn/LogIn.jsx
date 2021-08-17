@@ -57,10 +57,10 @@ export default function LogIn(props) {
                 onChange={handleChange}
               />
             </div>
-          </form>
               <button className="sign-in-button" type="submit" onClick={handleLogin}>
                 <h3>Log In</h3>
               </button>
+          </form>
         </section>
       </div>
     </Layout>

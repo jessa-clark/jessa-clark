@@ -104,7 +104,6 @@ const CreateProject = (props) => {
           />
           <div
             className="project-description-container"
-            onSubmit={handleSubmit}
           >
             <label className="project-description-label">Description:</label>
             <input

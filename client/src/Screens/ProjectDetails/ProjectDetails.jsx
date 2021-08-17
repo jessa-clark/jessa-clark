@@ -6,6 +6,7 @@ import EditComment from "../../Components/EditComment/EditComment";
 import Layout from "../../Components/Layout/Layout";
 import { getOneProject } from "../../Services/projects";
 import { verify } from "../../Services/users";
+import './ProjectDetails.css'
 
 function ProjectDetails() {
   const [project, setProject] = useState({});
@@ -31,10 +32,15 @@ function ProjectDetails() {
 
   return (
     <Layout>
-      <section className="detail-section">
+      <div className="details-container">
+        <div className="project-detail-header">
+          <h2>Project Detail</h2>
+        </div>
+        <section className="project-details-container">
         <div className="project-detail-image">
           <img src={project.image_url} alt={project.title} />
         </div>
+      <section className="detail-section">
         <div className="project-detail-text">
           <div className="project-detail-title">{project.title}</div>
         </div>
@@ -48,14 +54,18 @@ function ProjectDetails() {
             {project.deployed_url}
           </a>
         </div>
-        <div>{project.specs}</div>
-        <div>{project.content}</div>
+        <div className="project-detail-specs">{project.specs}</div>
+        <div className="project-detail-content">{project.content}</div>
         {userExists ? (
             <Link to={`/projects/edit/${id}`}>edit project</Link>
         ) : null}
-        <CommentForm project_id={project.id} />
-        <CommentTable project_id={project.id} />
       </section>
+      </section>
+        <section className="commentform-project-section">
+        <CommentForm project_id={project.id} /></section>
+        <section className="commenttable-project-section">
+        <CommentTable project_id={project.id} /></section>
+      </div>
     </Layout>
   );
 }

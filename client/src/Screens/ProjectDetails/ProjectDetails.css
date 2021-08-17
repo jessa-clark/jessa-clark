@@ -1,0 +1,139 @@
+.project-detail-header {
+  background-color: #ffee0e;
+  font-family: "bangers", cursive;
+  font-size: 5vw;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  color: white;
+  width: 50%;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 5rem;
+  padding: 0;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 10px 10px black;
+}
+.details-container {
+  background-image: url(../ProjectDetails/ProjectDetailback.png);
+}
+
+.projects-detail-container {
+display: flex;
+flex-direction: row;
+
+}
+.detail-section {
+  display: flex;
+  background-color: #ff92c2;
+  justify-content: space-evenly;
+  border-bottom: 1px solid white;
+  flex-direction: column !important;
+  padding: 50px 0;
+  width: 30%;
+  height: 50%;
+  margin: auto;
+  align-items:center;
+  justify-content: center;
+}
+
+.commentform-project-section {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid white;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 50px 0;
+  width: 100%;
+}
+
+.commenttable-project-section {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid white;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 50px 0;
+  width: 100%;
+}
+
+.project-detail-image img {
+  width: 40%;
+  margin: auto;
+  align-items:center;
+  justify-content: center;
+  display: flex;
+}
+.project-detail-image {
+  margin-bottom: 3rem;
+}
+
+.project-detail-text {
+  text-align: center;
+  flex-direction: column;
+  border-width: 0.1em;
+  width: 40%;
+}
+
+.project-detail-title {
+  font-size: 2.5rem;
+  color: white;
+  font-family: "bangers", cursive;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  margin-bottom: 1em;
+}
+
+.project-detail-gitHub {
+  font-size: 1.3rem;
+  font-family: 'gudea', sans-serif;
+  text-decoration: none;
+  color: black;
+  margin-bottom:.5em;
+}
+a:link {
+text-decoration: none;
+color: black;
+}
+
+a:visited {
+  color: black;
+}
+a:hover {
+color: #ffee0e;
+}
+
+.project-detail-deployed {
+  font-size: 1.3rem;
+  font-family: 'gudea', sans-serif;
+  text-decoration: none;
+  color: black;
+  margin-bottom:.5em;
+}
+
+.project-detail-specs {
+  font-size: 1.3em;
+  font-family: 'gudea', sans-serif;
+  margin-bottom:1em;
+}
+
+.project-detail-content {
+  font-size: 1rem;
+  font-family: 'gudea', sans-serif;
+  margin-bottom:1em;
+  width: 50%
+}
+
+.commentform-project-details {
+  font-size: 2rem;
+  font-family: 'gudea', sans-serif;
+}
+
+.commenttable-project-details {
+  font-size: 2rem;
+  font-family: 'gudea', sans-serif;
+}

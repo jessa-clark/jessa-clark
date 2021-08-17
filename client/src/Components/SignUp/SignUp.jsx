@@ -29,7 +29,6 @@ export default function Register(props) {
   };
 
   return (
-    <div className="register-container">
     
         <section className="sign-up-screen-form">
         <form onSubmit={handleRegister}>
@@ -62,11 +61,10 @@ export default function Register(props) {
             onChange={handleChange}
           />
           </div>
-        </form>
           <button className="register-button" type="submit" onClick={handleRegister}>
             <h3>Submit</h3>
           </button>
+        </form>
       </section>
-    </div>
   );
 }
