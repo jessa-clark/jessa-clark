@@ -45,14 +45,14 @@ function ProjectDetails() {
           <div className="project-detail-title">{project.title}</div>
         </div>
         <div className="project-detail-gitHub">
-          <NavLink to={project.github_url} rel="noreferrer">
+          <a href={project.github_url} rel="noreferrer">
             Click for GitHub
-          </NavLink>
+          </a>
         </div>
         <div className="project-detail-deployed">
-          <NavLink to={project.deployed_url} rel="noreferrer">
+          <a href={project.deployed_url} rel="noreferrer">
             Click to View App!
-          </NavLink>
+          </a>
         </div>
         <div className="project-detail-specs">{project.specs}</div>
         <div className="project-detail-content">{project.content}</div>
