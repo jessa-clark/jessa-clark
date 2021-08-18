@@ -16,7 +16,7 @@ export default function SignOut () {
 
   return (
     <Layout>
-    {signedOut ? <Redirect to="/"/> : <h2>Signed out...</h2>}
+    {signedOut ? <Redirect to="/login"/> : <h2>Signed out...</h2>}
     </Layout>
     )
   }
