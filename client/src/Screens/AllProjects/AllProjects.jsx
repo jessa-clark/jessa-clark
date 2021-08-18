@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { getAllProjects } from "../../Services/projects";
 import "./AllProjects.css";
 import Layout from "../../Components/Layout/Layout";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const AllProjects = (props) => {
   const [projects, setProjects] = useState([]);
-
   useEffect(() => {
     const fetchProjects = async () => {
       const allProjects = await getAllProjects();
@@ -14,7 +13,6 @@ const AllProjects = (props) => {
     };
     fetchProjects();
   }, []);
-
   return (
     <Layout>
       <div className="project-section-all">

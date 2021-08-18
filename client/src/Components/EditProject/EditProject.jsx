@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Redirect, useHistory } from "react-router-dom";
 import { verify } from "../../Services/users";
 import { deleteProject, getOneProject, updateProject } from "../../Services/projects";
+import Layout from "../Layout/Layout"
 import "./EditProject.css";
 
 const EditProject = (props) => {
@@ -65,7 +66,8 @@ const EditProject = (props) => {
   return !userBool && userBool !== null ?(
     <Redirect to="/" />
   ) : (
-    <div>
+    <Layout>
+    <div className="create-project-container">
       <div className="heading-wine-add">
         <h3>Changes are Good!🌀</h3>
       </div>
@@ -138,13 +140,14 @@ const EditProject = (props) => {
             <button type="update" className="add-button">
               Submit
             </button>
-            <button type="delete" className="delete-button" onClick={handleDelete}>
+            <button type="delete" className="delete-button-project" onClick={handleDelete}>
               Delete
             </button>
           </div>
         </form>
       </div>
     </div>
+    </Layout>
   );
 };
 

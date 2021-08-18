@@ -30,19 +30,16 @@ const EditComment = (props) => {
     project_id: project_id,
   });
 console.log(project_id)
-  // const [userBool, setUserBool] = useState(null);
+
   useEffect(() => {
     const fetchComment = async () => {
       const oneComment = await getOneComment(project_id, id);
       setComment(oneComment);
       
     };
-    // const checkUser = async () => {
-    //   const userExists = await verify();
-    //   setUserBool(userExists ? true : false);
-    // };
+
     fetchComment();
-    // checkUser();
+
   }, []);
 
   console.log(id)
@@ -86,13 +83,6 @@ console.log(project_id)
     deleteOneComment();
   };
 
-  // if (isUpdated) {
-  //   return <Redirect to="/projects"/>;
-  // }
-
-  // !userBool && userBool !== null ? (
-  //   <Redirect to="/" />
-  // ) :
 
   return  (
     <Layout>

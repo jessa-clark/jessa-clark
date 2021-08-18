@@ -7,6 +7,13 @@
   align-items: center;
 }
 
+.project-title-all {
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .render {
   display: flex;
 }

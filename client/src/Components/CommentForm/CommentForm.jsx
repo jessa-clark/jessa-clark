@@ -10,7 +10,7 @@ export default function CommentForm(props) {
     comment: "",
     project_id: props.project.id,
   });
-  const [isCreated, setCreated] = useState(false);
+
   const [userExists, setUserExists] = useState(null);
   const history = useHistory();
 
@@ -27,7 +27,7 @@ export default function CommentForm(props) {
       const addedComment = await createComment(props.project.id,comment) ;
       setComment({ addedComment });
     };
-    history.push("/projects")
+    history.push("/admin")
     addComment();
   }; 
 
