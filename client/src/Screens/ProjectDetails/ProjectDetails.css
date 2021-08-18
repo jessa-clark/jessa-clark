@@ -20,6 +20,12 @@
 }
 .details-container {
   background-image: url(../ProjectDetails/ProjectDetailback.png);
+  display: flex;
+  flex-direction: column;
+}
+
+.details-container img {
+  width: 100%;
 }
 
 .projects-detail-container {

@@ -17,7 +17,10 @@ const AllProjects = (props) => {
 
   return (
     <Layout>
-      <div className="project-section">
+      <div className="project-section-all">
+      <div className="display-all-title">
+        <h2>All Projects</h2>
+      </div>
         {projects.map((project) => {
           return (
               <Link className="project" to={`/projects/${project.id}`}>
@@ -25,7 +28,7 @@ const AllProjects = (props) => {
               <div className="project-image">
                 <img src={project.image_url} alt={project.title} />
               </div>
-                <div className="project-title">{projects.title}</div>
+                <div className="project-title-all">{projects.title}</div>
               <div className="project-gitHub">
                 <a href={projects.github_url} rel="noreferrer" />
               </div>
