@@ -13,7 +13,7 @@ function ContactCard() {
       </div>
     <div className="email-container">
       <div className="email-icon">
-        <img src={email} />
+        <img src={email} alt="email"/>
       </div>
       <div className="email-info">
       <div className="email-title">
@@ -27,7 +27,7 @@ function ContactCard() {
 
     <div className="linkedin-container">
       <div className="linkedin-icon">
-      <img src={linkedin}/>
+      <img src={linkedin} alt="linkedin"/>
       </div>
       <div className="linkedin-info">
       <div className="linkedin-title">
@@ -40,7 +40,7 @@ function ContactCard() {
     </div>
     <div className="github-container">
       <div className="github-icon">
-        <img src={github} />
+        <img src={github} alt="github"/>
       </div>
       <div className="github-info">
       <div className="github-title">

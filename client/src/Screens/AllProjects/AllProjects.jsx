@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllProjects } from "../../Services/projects";
 import "./AllProjects.css";
 import Layout from "../../Components/Layout/Layout";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AllProjects = (props) => {
   const [projects, setProjects] = useState([]);
@@ -27,12 +27,12 @@ const AllProjects = (props) => {
                 <img src={project.image_url} alt={project.title} />
               </div>
                 <div className="project-title-all">{projects.title}</div>
-              <div className="project-gitHub">
+              {/* <div className="project-gitHub">
                 <a href={projects.github_url} rel="noreferrer" />
               </div>
               <div className="project-deployed">
                 <a href={projects.deployed_url} rel="noreferrer" />
-              </div>
+              </div> */}
               <div className="project-specs">{project.specs}</div>
               <div className="project-content">{project.content}</div>
             </div>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Redirect, useHistory } from "react-router-dom";
-import { verify } from "../../Services/users";
+import { useParams, useHistory } from "react-router-dom";
 import "./EditComment.css";
 import {
   deleteComment,
@@ -11,7 +10,6 @@ import Layout from "../Layout/Layout";
 import { getOneProject } from "../../Services/projects";
 
 const EditComment = (props) => {
-
   const [project, setProject] = useState({});
   const { project_id, id } = useParams();
 
@@ -22,37 +20,27 @@ const EditComment = (props) => {
       setProject(oneProject);
     };
     fetchProject();
-  }, []);
+  }, [project_id]);
 
   const [comment, setComment] = useState({
     name: "",
     comment: "",
     project_id: project_id,
   });
-console.log(project_id)
+
 
   useEffect(() => {
     const fetchComment = async () => {
       const oneComment = await getOneComment(project_id, id);
       setComment(oneComment);
-      
     };
-
     fetchComment();
-
-  }, []);
-
-  console.log(id)
-
+  }, [project_id, id]);
 
 
   const [isUpdated, setUpdated] = useState(false);
 
- 
   const history = useHistory();
-
-
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -83,8 +71,7 @@ console.log(project_id)
     deleteOneComment();
   };
 
-
-  return  (
+  return (
     <Layout>
       <div className="comment-screen-container">
         <section className="comment-form-text">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Redirect, useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { createComment } from "../../Services/comments";
 import { verify } from "../../Services/users";
 import "./CommentForm.css";
@@ -27,7 +27,7 @@ export default function CommentForm(props) {
       const addedComment = await createComment(props.project.id,comment) ;
       setComment({ addedComment });
     };
-    history.push("/admin")
+    history.push("/projects")
     addComment();
   }; 
 

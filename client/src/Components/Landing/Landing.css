@@ -1,29 +1,57 @@
-.landing-image1 {
+.landing-container {
+  background: url("../Landing/landing.png");
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: row;
   padding: 0;
   margin: 0;
 }
-
-.landing-image2 {
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
+.landing-title {
+  position: absolute;
   display: flex;
-  flex-direction: row;
-  padding: 0;
-  margin: 0;
+  margin-top: 80px;
 }
 
-.landing-image-container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  margin: 0;
+.landing-name-1 {
+  font-family: "bangers", cursive;
+  color: white;
+  font-size: 15em;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  line-height: 0px;
+  margin-left: 8vw;
+  margin-top: 4vh;
 }
 
+.landing-name-2 {
+  font-family: "bangers", cursive;
+  color: white;
+  font-size: 15em;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  margin-bottom: 0;
+  padding: 0px;
+  line-height: 0px;
+  margin-top: 250px;
+  margin-left: 150px;
+  position: absolute;
+}
+
+.landing-developer {
+  font-family: "gudea", sans-serif;
+  color: black;
+  font-size: 2vw;
+  line-height: 0px;
+  font-weight: lighter;
+  margin-top: 600px;
+  margin-left: 310px;
+position: absolute;
+}
+
+@media only screen and (max-width: 600px) {
+  .landing-container {
+    background-image: ;
+  }
+}

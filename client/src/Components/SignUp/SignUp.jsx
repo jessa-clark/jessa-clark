@@ -5,7 +5,7 @@ import "./SignUp.css";
 
 export default function Register(props) {
   const history = useHistory();
-  const { setUser } = props;
+
 
   const [newUser, setNewUser] = useState({
     username: "",

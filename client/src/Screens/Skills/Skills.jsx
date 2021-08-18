@@ -1,8 +1,7 @@
 import "./Skills.css";
 import Layout from "../../Components/Layout/Layout"
-import skills from "../Skills/Skills.png";
 import resume from "../Skills/Resume.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Skills() {
   return (
@@ -25,7 +24,7 @@ function Skills() {
             }}
             target="_blank"
           >
-            <img src={resume}></img>
+            <img src={resume} alt="resume"></img>
           </Link>
         </div>
       </div>

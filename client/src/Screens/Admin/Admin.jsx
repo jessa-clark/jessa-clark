@@ -4,7 +4,6 @@ import CreateProject from "../CreateProject/CreateProject";
 import Layout from "../../Components/Layout/Layout";
 import SignUp from "../../Components/SignUp/SignUp";
 import { verify } from "../../Services/users";
-import CommentTable from "../../Components/CommentTable/CommentTable";
 import "./Admin.css";
 
 function Admin(props) {

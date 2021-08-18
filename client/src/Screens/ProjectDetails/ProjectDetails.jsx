@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CommentForm from "../../Components/CommentForm/CommentForm";
 import CommentTable from "../../Components/CommentTable/CommentTable";
-import EditComment from "../../Components/EditComment/EditComment";
 import Layout from "../../Components/Layout/Layout";
 import { getOneProject } from "../../Services/projects";
 import { verify } from "../../Services/users";
@@ -11,7 +10,6 @@ import './ProjectDetails.css'
 function ProjectDetails(props) {
   const [project, setProject] = useState({});
   const [userExists, setUserExists] = useState(null);
-  // const [projects, setProjects] = useState([])
   const { id } = useParams();
 
   useEffect(() => {
@@ -20,7 +18,7 @@ function ProjectDetails(props) {
       setProject(project);
     };
     fetchProject();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     const checkSigned = async () => {

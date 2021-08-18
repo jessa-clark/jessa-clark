@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Route, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getAllComments } from '../../Services/comments';
 import { verify } from '../../Services/users';
-import EditComment from '../EditComment/EditComment';
+
 
 function CommentTable(props) {
 const [comments, setComments] =useState([])
