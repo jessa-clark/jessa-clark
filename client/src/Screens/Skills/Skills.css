@@ -1,0 +1,49 @@
+.skills-section-skills {
+  background: url("../Skills/Skills.png");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  padding-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+}
+
+.skills-page-title {
+  font-family: "bangers", cursive;
+  color: #ffee34;
+  font-size: 5em;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  display: flex;
+  justify-content: center;
+  margin-left: 6.7em;
+}
+
+.resume-experience-section {
+  background-color: #00bfff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8em;
+}
+
+.resume-experience-title {
+  font-family: "bangers", cursive;
+  color: #ffee34;
+  font-size: 5em;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  display: flex;
+  margin-left: 6em;
+}
+
+.resume-post {
+display: flex;
+justify-content: center;
+}
+
+.resume-post img:hover {
+  box-shadow: 0 0 20px 0px #e6166b;
+  transform: scale(1.02);
+  color: #e6166b;
+}

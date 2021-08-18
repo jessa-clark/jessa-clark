@@ -45,3 +45,8 @@ margin-left: 55em;
   height: 3em;
   margin-left: 28em;
 }
+
+.skills-button:hover {
+  box-shadow: 0 0 20px 0px #e6166b;
+  color: #e6166b;
+}
