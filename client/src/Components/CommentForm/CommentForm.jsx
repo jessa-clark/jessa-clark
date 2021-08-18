@@ -49,7 +49,7 @@ export default function CommentForm(props) {
         <div className="question">
         <h3>Questions? Comments?</h3>
         </div>
-        <form className="comment-form" onSubmit={handleComment}>
+        <form className="comment-form" onSubmit={handleComment} autocomplete="off">
           <label>Name</label>
           <div className="comment-name">
             <input
