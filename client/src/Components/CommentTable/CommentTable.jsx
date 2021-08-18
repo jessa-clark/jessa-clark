@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link, Route, useParams } from 'react-router-dom';
 import { getAllComments } from '../../Services/comments';
 import { verify } from '../../Services/users';
+import EditComment from '../EditComment/EditComment';
 
 function CommentTable(props) {
 const [comments, setComments] =useState([])
 const { id } = useParams();
 const [userExists, setUserExists] = useState(null);
 
+
   useEffect(() => {
     const fetchComments = async () => {
-    const allComments = await getAllComments(props.project_id)
+    const allComments = await getAllComments()
     setComments(allComments)
     };
     fetchComments();
@@ -30,7 +32,7 @@ const [userExists, setUserExists] = useState(null);
       <div className="comment-table-container">
       {comments.map((comment) => {
         return(
-          <div className="comment-table">
+          <div key={comment.id} className="comment-table">
             <div className="comment-table-name">
           <h2>{comment.name}</h2>
           </div>
@@ -38,7 +40,7 @@ const [userExists, setUserExists] = useState(null);
           <p>{comment.comment}</p>
           </div>
           {userExists ? (
-            <Link to={`/projects/${props.project_id}/comments/${comment.id}`}>edit comment</Link>
+            <Link to={`/projects/${id}/comments/${comment.id}`}>edit comment</Link>
         ) : null}
           </div>  
         )

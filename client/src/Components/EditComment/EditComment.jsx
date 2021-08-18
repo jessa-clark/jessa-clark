@@ -8,57 +8,79 @@ import {
   updateComment,
 } from "../../Services/comments";
 import Layout from "../Layout/Layout";
+import { getOneProject } from "../../Services/projects";
 
 const EditComment = (props) => {
-  console.log(props.project_id)
+
+  const [project, setProject] = useState({});
+  const { project_id, id } = useParams();
+
+  useEffect(() => {
+    const fetchProject = async () => {
+      const oneProject = await getOneProject(project_id);
+
+      setProject(oneProject);
+    };
+    fetchProject();
+  }, []);
+
   const [comment, setComment] = useState({
     name: "",
     comment: "",
-    project_id: props.project_id,
+    project_id: project_id,
   });
-
-  const [isUpdated, setUpdated] = useState(false);
-  const [userBool, setUserBool] = useState(null);
-  const { id } = useParams();
-  const history = useHistory();
-
+console.log(project_id)
+  // const [userBool, setUserBool] = useState(null);
   useEffect(() => {
     const fetchComment = async () => {
-      const comment = await getOneComment(props.project_id, id);
-      setComment(comment);
+      const oneComment = await getOneComment(project_id, id);
+      setComment(oneComment);
+      
     };
-    const checkUser = async () => {
-      const userExists = await verify();
-      setUserBool(userExists ? true : false);
-    };
-    checkUser();
+    // const checkUser = async () => {
+    //   const userExists = await verify();
+    //   setUserBool(userExists ? true : false);
+    // };
     fetchComment();
-  }, [id, userBool]);
+    // checkUser();
+  }, []);
+
+  console.log(id)
+
+
+
+  const [isUpdated, setUpdated] = useState(false);
+
+ 
+  const history = useHistory();
+
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setComment({
       ...comment,
       [name]: value,
-      project_id: props.project_id,
+      project_id: project.id,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const editComment = async () => {
-      const updatedComment = await updateComment(props.project_id, id, comment);
+      const updatedComment = await updateComment(project.id, id, comment);
       setUpdated({ updatedComment });
-      history.push("/projects");
+      history.push(`/projects/${project.id}`);
     };
     editComment();
   };
 
   const handleDelete = () => {
     const deleteOneComment = async () => {
-      await deleteComment(props.project_id, id);
+      await deleteComment(project.id, id);
       setTimeout(() => {
-        history.push("/projects");
+        history.push(`/projects/${project.id}`);
       }, 500);
     };
     deleteOneComment();
@@ -68,9 +90,11 @@ const EditComment = (props) => {
   //   return <Redirect to="/projects"/>;
   // }
 
-  return !userBool && userBool !== null ? (
-    <Redirect to="/" />
-  ) : (
+  // !userBool && userBool !== null ? (
+  //   <Redirect to="/" />
+  // ) :
+
+  return  (
     <Layout>
       <div className="comment-screen-container">
         <section className="comment-form-text">

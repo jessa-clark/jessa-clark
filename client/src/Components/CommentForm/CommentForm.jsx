@@ -5,31 +5,31 @@ import { verify } from "../../Services/users";
 import "./CommentForm.css";
 
 export default function CommentForm(props) {
-  console.log(props.project_id);
   const [comment, setComment] = useState({
     name: "",
     comment: "",
-    project_id: props.project_id,
+    project_id: props.project.id,
   });
-
-  // setComment({...comment, project_id: props.id})
   const [isCreated, setCreated] = useState(false);
   const [userExists, setUserExists] = useState(null);
   const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setComment({ ...comment, [name]: value, project_id: props.project_id });
+    setComment({ ...comment, [name]: value, project_id: props.project.id });
   };
 
-  const handleComment = () => {
+
+
+  const handleComment = (e) => {
+    e.preventDefault();
     const addComment = async () => {
-      const addedComment = await createComment(props.project_id, comment);
-      setCreated({ addedComment });
-      history.push(`/projects/${props.project_id}`);
+      const addedComment = await createComment(props.project.id,comment) ;
+      setComment({ addedComment });
     };
-    addComment(props.project_id);
-  };
+    history.push("/projects")
+    addComment();
+  }; 
 
   useEffect(() => {
     const checkSigned = async () => {
@@ -40,7 +40,7 @@ export default function CommentForm(props) {
   }, []);
 
   // if(isCreated) {
-  //   return <Redirect to={`/projects/${props.project_id}`} />;
+  //   return <Redirect to={`/projects/${props.project.id}`} />;
   // }
 
   return (

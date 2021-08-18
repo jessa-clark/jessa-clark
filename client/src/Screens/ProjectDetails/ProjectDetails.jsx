@@ -8,7 +8,7 @@ import { getOneProject } from "../../Services/projects";
 import { verify } from "../../Services/users";
 import './ProjectDetails.css'
 
-function ProjectDetails() {
+function ProjectDetails(props) {
   const [project, setProject] = useState({});
   const [userExists, setUserExists] = useState(null);
   // const [projects, setProjects] = useState([])
@@ -62,9 +62,9 @@ function ProjectDetails() {
       </div>
       </div>
         <div className="commentform-project-section">
-        <CommentForm project_id={project.id} /></div>
+        <CommentForm project={project} /></div>
         <div className="commenttable-project-section">
-        <CommentTable project_id={project.id} /></div>
+        <CommentTable project={project} setProject={setProject}/></div>
       </div>
     </Layout>
   );

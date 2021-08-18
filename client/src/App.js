@@ -10,6 +10,7 @@ import EditProject from "./Components/EditProject/EditProject";
 import SignOut from "./Screens/SignOut/SignOut"
 import AllProjects from "./Screens/AllProjects/AllProjects";
 import EditComment from "./Components/EditComment/EditComment";
+import Skills from "./Screens/Skills/Skills.jsx"
 
 function App() {
   const [user, setUser] = useState(null);
@@ -49,6 +50,9 @@ function App() {
         </Route>
         <Route exact path="/projects/:project_id/comments/:id">
           <EditComment user={user}/>
+        </Route>
+        <Route exact path="/skills">
+          <Skills />
         </Route>
       </Switch>
     </div>
