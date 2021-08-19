@@ -4,7 +4,7 @@
   width: 100vw;
   height: auto;
 
-  display: grid;
+display: grid;
 grid-template-areas: 
 "A B"
 "C B"
@@ -17,7 +17,7 @@ grid-template-areas:
   color: #ffee34;
   font-size: 4vw;
   width: 45%;
-margin-left: 3em;
+  margin-left: 3em;
   text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
   -1px -1px 0 #000;
   margin-bottom: 0;

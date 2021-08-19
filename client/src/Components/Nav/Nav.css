@@ -67,3 +67,15 @@ header {
 .hamburger-div {
   display: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .fa-bars, .fa-times {
+    color: black;
+    position: fixed;
+    cursor: pointer;
+    z-index: 5;
+    margin-left: 6vw;
+    margin-top: 2vw;
+    font-size: 36px;
+  }
+}

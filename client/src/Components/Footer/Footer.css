@@ -1,0 +1,35 @@
+.footer-container {
+  display: flex;
+  flex-direction: row;
+justify-content: center;
+align-self: center;
+background-color: #e6166b;
+}
+
+.logo {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.dev-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dev-name {
+  font-family: 'gudea', sans-serif;
+  font-size: 1em;
+  line-height: 1px;
+}
+
+.dev-company {
+  font-family: 'gudea', sans-serif;
+  font-size: 1em;
+  line-height: 1px;
+}
