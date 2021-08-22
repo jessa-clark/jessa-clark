@@ -18,6 +18,7 @@ const HomeProjects = (props) => {
 
   return (
     <div className="home-project-container">
+      <div className="notable-projects-text">Notable Projects</div>
     <div className="all-projects">
       {projects.map((project) => {
         return(

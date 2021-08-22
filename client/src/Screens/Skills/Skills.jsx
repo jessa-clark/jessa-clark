@@ -1,6 +1,6 @@
 import "./Skills.css";
 import Layout from "../../Components/Layout/Layout"
-import resume from "../Skills/Resume.png";
+
 import { Link } from "react-router-dom";
 
 function Skills() {
@@ -16,7 +16,7 @@ function Skills() {
         <div className="resume-experience-title">
           <h2> Resume and Experience </h2>
         </div>
-        <div className="resume-post">
+        {/* <div className="resume-post">
           <Link
             to={{
               pathname:
@@ -26,7 +26,7 @@ function Skills() {
           >
             <img src={resume} alt="resume"></img>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
     </Layout>

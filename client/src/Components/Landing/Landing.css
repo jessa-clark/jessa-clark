@@ -1,106 +1,121 @@
 .landing-container {
-  background: url("../Landing/landing.png");
+  background: url("../Landing/landing3.png");
   width: 100vw;
-  height: 100vh;
-  background-size: cover;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
   padding: 0;
   margin: 0;
 }
-.landing-title {
-  position: absolute;
+
+.landing-image-container {
   display: flex;
-  margin-top: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 .landing-name-1 {
   font-family: "bangers", cursive;
-  color: white;
-  font-size: 15vw;
+  color: #00bfff;
+  font-size: 8vw;
   text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
-  line-height: 0px;
-  margin-left: 8vw;
-  margin-top: 4vh;
+  line-height: 16vh;
 }
 
-.landing-name-2 {
-  font-family: "bangers", cursive;
-  color: white;
-  font-size: 15vw;
-  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
-  margin-bottom: 0;
-  padding: 0px;
-  line-height: 0px;
-  margin-top: 250px;
-  margin-left: 150px;
-  position: absolute;
+.dev-title-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
 .landing-developer {
-  font-family: "gudea", sans-serif;
+  font-family: 'gudea', sans-serif;
   color: black;
   font-size: 2vw;
-  line-height: 0px;
-  font-weight: lighter;
-  margin-top: 600px;
-  margin-left: 310px;
-position: absolute;
+  line-height: 3vh;
 }
+
+
 
 @media only screen and (max-width: 600px) {
   .landing-container {
-    background: url("../Landing/landing4.png");
     flex-direction: column;
-    background-size: cover;
+    background-image: none;
+    background-color: #ffee0e;
   }
 
-  .landing-container img {
-    width: 100%;
+  .landing-image img {
     display: flex;
+    flex-direction: unset;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
   }
+
 
   .landing-title {
-    position:unset;
-    margin-top: 35vh;
-    flex-direction: column;
+    display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
+    padding-left: 0px;
+    margin-top: 12vh;
+    line-height: 0px;
   }
 
   .landing-name-1 {
+    text-align: center;
     font-family: "bangers", cursive;
-    color: white;
-    font-size: 25vw;
-    text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
-      -1px -1px 0 #000;
-    line-height: 0px;
-    margin-top: 8vh;
-    margin-left: 0;
+    color: #00bfff;
+    font-size: 20vw;
+    width: 100vw;
+    position: absolute;
+    margin-bottom: 5vh;
   }
-  
-  .landing-name-2 {
-    font-family: "bangers", cursive;
-    color: white;
-    font-size: 25vw;
-    text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
-      -1px -1px 0 #000;
-    margin-bottom: 0;
-    padding: 0px;
-    line-height: 0;
-    margin-top: 13vh;
-    margin-left: 0;
+
+  .dev-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding:0;
+    margin-top: 55vh;
+    position: absolute;
   }
-  
+
   .landing-developer {
+    font-family: 'gudea', sans-serif;
     color: black;
-    font-size: 5vw;
-    font-weight: normal;
-    line-height: 0px;
-    margin-top: 5vh;
-    margin-left: 0;
-    position: unset;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vw;
+    padding: 0;
+
   }
 }
+
