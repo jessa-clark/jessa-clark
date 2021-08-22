@@ -7,7 +7,7 @@ const ProjectCard = (props) => {
     <Link className="project" to={`/projects/${id}`}>
       <article>
         <div className="project-header">
-          <h3>{title}</h3>
+          <p>{title}</p>
         </div>
         <div className="project-body-image">
           <img src={image_url} alt={title} />

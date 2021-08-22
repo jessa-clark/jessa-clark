@@ -6,8 +6,8 @@
   text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
   -1px -1px 0 #000;
   background-color: #ff92c2;
-  max-width: 450px;
-  max-height: 450px;
+  max-width: 350px;
+  max-height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -33,7 +33,7 @@
   justify-content: space-evenly;
 }
 
-.project-header h3 {
+.project-header  {
   font-size: 2vw;
   padding: 0;
   margin: 0;
@@ -47,4 +47,14 @@
 }
 .project-body-image img {
   width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .project-header  {
+    font-size: 7vw;
+    padding: 0;
+    margin: 0;
+  }
+
+
 }
