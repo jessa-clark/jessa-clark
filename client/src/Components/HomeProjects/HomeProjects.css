@@ -29,9 +29,14 @@
   padding-bottom: 2vh;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
   .notable-projects-text {
     font-size: 12vw;
+  }
+
+  .all-projects {
+    flex-direction: column;
+    padding: 0;
   }
 }
 

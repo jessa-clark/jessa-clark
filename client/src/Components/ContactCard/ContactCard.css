@@ -133,7 +133,7 @@ align-items: center;
 line-height: 1px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
   .contact-card-container {
   flex-direction: column;
   }
