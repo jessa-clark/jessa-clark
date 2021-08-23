@@ -55,6 +55,9 @@ width: 100%;
   font-family: 'bangers', cursive;
   color: #e6166b;
   font-size: 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   text-align: center;
   text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
   -1px -1px 0 #000;
@@ -73,18 +76,28 @@ width: 100%;
   height: 5vh;
 }
 
+.project-content {
+  font-family: 'gudea', sans-serif;
+  font-size: 1vw;
+}
+
 @media only screen and (max-width: 1024px) {
   .display-all-title {
     margin-top: 1vh;
     font-size: 12vw;
+    text-align: center;
   }
 
-  .project-title-all {
-    font-size: 7vw;
+  .project-title-all p{
+    font-size: 10vw;
   }
 
-  .project-section-all {
-    flex-direction: row;
-    flex-wrap: wrap;
+  .project-content {
+    font-size: 4vw;
+  }
+
+  .details-button {
+    font-size: 5vw;
+    width: 50vw;
   }
 }
