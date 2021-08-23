@@ -67,11 +67,11 @@ function Nav() {
             <Link to="/" className="nav-link">
               Home
             </Link>
-            <Link to="/skills" className="nav-link">
-              Skills
-            </Link>
             <Link to="/projects" className="nav-link">
               Projects
+            </Link>
+            <Link to="/about" className="nav-link">
+              About
             </Link>
             {userExists ? (
               <>
