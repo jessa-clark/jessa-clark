@@ -28,7 +28,7 @@ const AllProjects = (props) => {
               <div className="project-image">
                 <img src={project.image_url} alt={project.title} />
               </div>
-              <div className="project-specs">{project.specs}</div>
+              <button className="details-button">Learn More!</button>
               <div className="project-content">{project.content}</div>
             </div>
               </Link>
