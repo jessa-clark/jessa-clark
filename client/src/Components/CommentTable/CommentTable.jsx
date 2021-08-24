@@ -34,7 +34,7 @@ const [userExists, setUserExists] = useState(null);
         return(
           <div key={comment.id} className="comment-table">
             <div className="comment-table-name">
-          <h2>{comment.name}</h2>
+          <p>{comment.name}</p>
           </div>
           <div className="comment-table-comment">
           <p>{comment.comment}</p>

@@ -1,48 +1,54 @@
-.project-detail-header {
-  background-color: #ffee0e;
-  font-family: "bangers", cursive;
-  font-size: 5vw;
-  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
-  color: white;
-  width: 50%;
-  height: 200px;
-  margin: auto;
-  margin-bottom: 5rem;
-  padding: 0;
-  top: 20px;
+.project-details-container {
+  background: url(../ProjectDetails/ProjectDetailback.png);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+}
+
+.project-details-header-title {
+  font-family: "bangers", cursive;
+  color: white;
+  background-color: #ffee0e;
   border: 1px solid black;
   padding: 10px;
   box-shadow: 10px 10px black;
+  width: 50vw;
+  font-size: 5vw;
+  height: auto;
+  padding: 0;
+  text-align: center;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+  -1px -1px 0 #000;
+  margin-bottom: 8vh;
+  margin-top: 5vh;
 }
-.details-container {
-  background-image: url(../ProjectDetails/ProjectDetailback.png);
+
+.image-details-container {
   display: flex;
-  flex-direction: column;
-}
-
-.details-container img {
-  width: 100%;
-}
-
-.projects-detail-container {
-display: flex;
-flex-direction: row;
-
-}
-.detail-section {
-  display: flex;
-  background-color: #ff92c2;
+  flex-direction: row;
   justify-content: space-evenly;
+  padding-bottom: 2vh;
+  margin-bottom: 5vh;
+}
+
+
+.project-details-image {
+  width: 50%;
+}
+
+.details-container {
+  display: flex;
+  background: url('../ProjectDetails/details.png');
+  background-size: cover;
   border-bottom: 1px solid white;
-  flex-direction: column !important;
+  flex-direction: column;
   padding: 50px 0;
   width: 30%;
   height: 50%;
-  margin: auto;
   align-items:center;
   justify-content: center;
   border: 1px solid black;
@@ -50,67 +56,53 @@ flex-direction: row;
   box-shadow: 10px 10px black;
 }
 
-.commentform-project-section {
+.commentform-container {
   display: flex;
-  justify-content: space-evenly;
-  border-bottom: 1px solid white;
-  flex-flow: row wrap;
-  align-items: center;
-  padding: 50px 0;
-  width: 100%;
+  flex-direction: row;
+  margin-bottom: 5vh;
 }
 
 .commenttable-project-section {
   display: flex;
-  justify-content: space-evenly;
-  border-bottom: 1px solid white;
-  flex-flow: row wrap;
-  align-items: center;
-  padding: 50px 0;
+  flex-direction: column;
+  margin-right: 2vw;
   width: 100%;
+  background-color: #e6166b;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 10px 10px black;
 }
+
+.comment-table-container {
+height: 80%;
+}
+
 
 .comment-table {
-display: flex;
-background-color: #ff92c2;
-justify-content: space-evenly;
-border-bottom: 1px solid white;
-flex-direction: row !important;
-padding: 50px 0;
-height: 50%;
-margin: auto;
-align-items:center;
-border: 1px solid black;
-padding: 10px;
-box-shadow: 10px 10px black;
-color: black;
-}
-
-.comment-table-name {
   display: flex;
-  font-family: "gudea", sans-serif;
-  margin-right: 2vw;
-  text-align: center;
-  padding: 2px;
+  background-color: white;
+  border-bottom: 1px solid white;
+  flex-direction: row !important;
+  width: 100%;
+  height: auto;
 }
-
-.comment-table-comment {
-  display: flex;
-  font-family: "gudea", sans-serif;
-  margin-right: 2vw;
-  text-align: left;
-}
-
-.project-detail-image img {
-  width: 40%;
-  margin: auto;
-  align-items:center;
-  justify-content: center;
-  display: flex;
-}
-.project-detail-image {
-  margin-bottom: 3rem;
-}
+  
+  .comment-table-name {
+    display: block;
+    width:50px;
+    font-family: "gudea", sans-serif;
+    text-align: left;
+    margin-right: 30px;
+    padding: 2px;
+  }
+  
+  .comment-table-comment {
+    display: block;
+    width:200px;
+    font-family: "gudea", sans-serif;
+    margin-right: 30px;
+    padding: 2px;
+  }
 
 .project-detail-text {
   text-align: center;
@@ -126,7 +118,6 @@ color: black;
   text-align: center;
   text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
-  margin-bottom: .5em;
   margin-top: .5em;
 }
 
@@ -135,22 +126,42 @@ color: black;
   font-family: 'gudea', sans-serif;
   text-decoration: none;
   color: black;
+  margin-top: 1vh;
   margin-bottom:.5em;
 }
-a:link {
-text-decoration: none;
-color: black;
+
+.project-detail-gitHub a , .project-detail-deployed a {
+  color: black;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 5px 5px black;
+  transition: all 0.5s ease-out;
 }
 
-a:hover {
-color: #ffee0e;
+.project-detail-gitHub a:hover, .project-detail-deployed a:hover {
+  color: white;
+  box-shadow: 0 0 20px 0px #e6166b;
+  transform: scale(1.02);
+  color: #e6166b;
 }
+
+.project-detail-gitHub a:active, .project-detail-deployed a:active  {
+  color: black;
+}
+
+.project-detail-gitHub a:visited, .project-detail-deployed a:visited {
+  color: none;
+}
+
 
 .project-detail-deployed {
   font-size: 1.3rem;
   font-family: 'gudea', sans-serif;
   text-decoration: none;
   color: black;
+  margin-top: 2vh;
   margin-bottom:.5em;
 }
 
@@ -164,15 +175,51 @@ color: #ffee0e;
   font-size: 1rem;
   font-family: 'gudea', sans-serif;
   margin-bottom:1em;
-  width: 50%
+  width: 80%;
+  background-color: white;
+  border: 1px solid black;
+padding: 10px;
+box-shadow: 10px 10px black;
 }
 
-.commentform-project-details {
-  font-size: 2rem;
-  font-family: 'gudea', sans-serif;
+@media only screen and (max-width: 1024px) {
+  .project-details-header-title {
+    margin-top: 10vh;
+    font-size: 10vw;
+    width: 90vw;
+    margin-bottom: 6vh;
+  }
+
+  .image-details-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .project-details-image {
+    width: 90%;
+    margin-bottom: 4vh;
+  }
+
+  .details-container {
+    width: 90%;
+  }
+
+  .commentform-container {
+    flex-direction: column-reverse;
+  }
+
+  .project-detail-title {
+    font-size: 10vw;
+  }
+
+  .comment-table {
+    margin-top: 1vh;
+    padding-left: 30px;
+    padding-top: 10px;
+  }
+
+  .commenttable-project-section {
+    margin-top: 2vh;
+  }
 }
 
-.commenttable-project-details {
-  font-size: 2rem;
-  font-family: 'gudea', sans-serif;
-}

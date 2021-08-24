@@ -19,17 +19,15 @@ export default function CommentForm(props) {
     setComment({ ...comment, [name]: value, project_id: props.project.id });
   };
 
-
-
   const handleComment = (e) => {
     e.preventDefault();
     const addComment = async () => {
-      const addedComment = await createComment(props.project.id,comment) ;
+      const addedComment = await createComment(props.project.id, comment);
       setComment({ addedComment });
     };
-    history.push("/projects")
+    history.push("/projects");
     addComment();
-  }; 
+  };
 
   useEffect(() => {
     const checkSigned = async () => {
@@ -47,26 +45,33 @@ export default function CommentForm(props) {
     <div>
       <div className="comment-form-container">
         <div className="question">
-        <h3>Questions? Comments?</h3>
+          <p>Questions? Comments?</p>
         </div>
-        <form className="comment-form" onSubmit={handleComment} autocomplete="off">
-          <label>Name</label>
-          <div className="comment-name">
-            <input
-              name="name"
-              id="name"
-              value={comment.name}
-              onChange={handleChange}
-            />
-          </div>
-          <label>Comment</label>
+        <form
+          className="comment-form"
+          onSubmit={handleComment}
+          autocomplete="off"
+        >
           <input
-            className="comment-comment"
-            name="comment"
-            id="comment"
-            value={comment.comment}
+          type="text"
+          placeholder="Name"
+            className="input-comment-name"
+            name="name"
+            id="name"
+            value={comment.name}
             onChange={handleChange}
           />
+
+            <textarea
+            resize="none"
+            placeholder="Comment"
+            className="input-comment-comment"
+            type="text"
+              name="comment"
+              id="comment"
+              value={comment.comment}
+              onChange={handleChange}
+            />
           <button className="comment-submit-button">
             <h3>Submit</h3>
           </button>
