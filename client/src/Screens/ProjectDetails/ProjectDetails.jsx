@@ -56,14 +56,14 @@ function ProjectDetails(props) {
             alt={project.title}
           />
         </div>
-      <div className="commentform-container">
+      {/* <div className="commentform-container">
         <div className="commenttable-project-section">
           <CommentTable project={project} setProject={setProject} />
         </div>
         <div className="commentform-project-section">
           <CommentForm project={project} />
         </div>
-      </div>
+      </div> */}
       </div>
       <ContactCard />
     </Layout>

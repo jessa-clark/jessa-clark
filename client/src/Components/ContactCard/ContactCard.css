@@ -63,6 +63,18 @@ line-height: 1px;
 
 }
 
+.email-link a, .linkedin-link a, .github-link a {
+  color: black;
+  text-decoration: none;
+}
+
+.email-link a:hover, .linkedin-link a:hover, .github-link a:hover {
+  color: white;
+  box-shadow: 0 0 20px 0px #e6166b;
+  transform: scale(1.02);
+  color: #e6166b;
+}
+
 .linkedin-container {
 background-color: #ff92c2;
 display: flex;

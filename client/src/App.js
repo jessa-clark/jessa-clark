@@ -10,11 +10,20 @@ import EditProject from "./Components/EditProject/EditProject";
 import SignOut from "./Screens/SignOut/SignOut"
 import AllProjects from "./Screens/AllProjects/AllProjects";
 import EditComment from "./Components/EditComment/EditComment";
+import { getAllProjects } from "./Services/projects";
 
 
 function App() {
   const [user, setUser] = useState(null);
+  const [projects, setProjects] = useState([]);
 
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const allProjects = await getAllProjects();
+      setProjects(allProjects);
+    };
+    fetchProjects();
+  }, []);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -37,19 +46,19 @@ function App() {
           <SignOut setUser={setUser}/>
         </Route>
         <Route exact path="/admin">
-          <Admin user={user} setUser={setUser}/>
+          <Admin user={user} setUser={setUser} projects={projects}/>
         </Route>
         <Route exact path="/projects">
-          <AllProjects user={user}/>
+          <AllProjects user={user} projects={projects}/>
         </Route>
         <Route exact path="/projects/edit/:id">
-          <EditProject user={user} />
+          <EditProject user={user} projects={projects}/>
         </Route>
         <Route exact path="/projects/:id">
-          <ProjectDetails user={user} />
+          <ProjectDetails user={user} projects={projects} />
         </Route>
         <Route exact path="/projects/:project_id/comments/:id">
-          <EditComment user={user}/>
+          <EditComment user={user} projects={projects}/>
         </Route>
       </Switch>
     </div>
