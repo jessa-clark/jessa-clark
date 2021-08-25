@@ -43,7 +43,6 @@
   font-size: 8vw;
   text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
-  line-height: 16vh;
 }
 
 .dev-title-container {
@@ -55,8 +54,8 @@
 .landing-developer {
   font-family: 'gudea', sans-serif;
   color: black;
-  font-size: 2vw;
-  line-height: 3vh;
+  font-size: 3vw;
+  padding: 10px;
 }
 
 
@@ -72,18 +71,6 @@
     display: flex;
     flex-direction: unset;
     margin-bottom: 10vh;
-    margin-top: 5vh;
-  }
-
-
-  .landing-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    padding-left: 0px;
-    margin-top: 12vh;
-    line-height: 0px;
   }
 
   .landing-name-1 {
@@ -92,19 +79,11 @@
     color: #00bfff;
     font-size: 20vw;
     width: 100vw;
-    position: absolute;
-    margin-bottom: 5vh;
+    margin-top: 15vh;
+    line-height: 5vh;
+    padding: 2vh;
   }
 
-  .dev-title-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding:0;
-    margin-top: 55vh;
-    position: absolute;
-  }
 
   .landing-developer {
     font-family: 'gudea', sans-serif;
@@ -114,8 +93,8 @@
     justify-content: center;
     align-items: center;
     font-size: 10vw;
-    padding: 0;
-
+    padding: 2vh;
+    margin-top: 2vh;
   }
 }
 
