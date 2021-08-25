@@ -1,0 +1,159 @@
+.about-container {
+  background: url(../About/About2.png);
+  height: 90vh;
+  width: 100vw;
+  background-size: contain;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-pic-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5vw;
+}
+
+
+.dev-name-name {
+  font-family: "bangers", cursive;
+  color: #ffee34;
+  font-size: 4vw;
+  text-align: center;
+  text-shadow: 5px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+  -1px -1px 0 #000;
+  width: 100%;
+  flex-direction: row;
+}
+
+.dev-pic {
+  height: 450px;
+  border-radius: 180px 180px 0 0;
+}
+
+
+.dev-pic img {
+  width: 100%;
+}
+
+.dev-title {
+  background-color:#ffee34;
+  font-family: "bangers", cursive;  
+  border: 1px solid black;
+  font-size: 30px;
+  padding: 20px 10px 0 10px;
+  height: 50px;
+  box-shadow: 10px 10px black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.desc-boxes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  row-gap: 5vh;
+  margin-top: 4vh;
+}
+
+.desc-box-1 {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: white;
+box-shadow: 10px 10px black;
+padding: 16px;
+}
+
+.desc-box-1-title {
+  font-family: "bangers", cursive;
+  font-size: 30px
+}
+
+.desc-box-1 p , .desc-box-2 p, .desc-box-3 p {
+  font-family: 'guedea', sans-serif;
+}
+
+.desc-box-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #00bfff;
+  box-shadow: 10px 10px black;
+  padding: 16px;
+}
+
+.desc-box-2-title, .desc-box-3-title {
+  font-family: "bangers", cursive;
+  font-size: 30px
+}
+
+.desc-box-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff92c2;
+  box-shadow: 10px 10px black;
+  padding: 16px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .about-container {
+    height: 100%;
+    width: 100vw;
+    background-size: cover;
+  }
+  
+  .about-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dev-name-name {
+    font-size: 12vw;
+    margin-top: 5vh;
+  }
+  
+  .dev-pic {
+    height: 450px;
+    border-radius: 180px 180px 0 0;
+  }
+  
+  
+  .dev-pic img {
+    width: 100%;
+  }
+  
+  .dev-title {
+    width: 100%
+  }
+  
+  .desc-boxes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    row-gap: 5vh;
+    margin-top: 4vh;
+  }
+  
+}
+
+
