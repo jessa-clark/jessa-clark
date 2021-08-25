@@ -48,6 +48,9 @@ function ProjectDetails(props) {
               <a href={project.deployed_url} rel="noreferrer">
                 View App
               </a>
+              {userExists ? (
+            <Link to={`/projects/edit/${id}`}>edit project</Link>
+        ) : null}
             </div>
           </div>
           <img

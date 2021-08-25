@@ -72,10 +72,6 @@ const EditProject = (props) => {
         <h3>Changes are Good!🌀</h3>
       </div>
       <div className="add-form-container">
-        {/* <div className="add-image-container">
-      <p className="image-preview">image preview</p>
-        <img className="wine-image" src={wine.imgURL} alt={wine.name} />
-      </div> */}
         <form className="add-form" onSubmit={handleSubmit}>
           <label className="title-label">Title</label>
           <input
