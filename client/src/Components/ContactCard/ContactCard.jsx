@@ -3,11 +3,16 @@ import email from "../ContactCard/emaillogo.png";
 import linkedin from "../ContactCard/linkedinlogo.png";
 import github from "../ContactCard/githublogo.png";
 import "./ContactCard.css";
+import { Link } from "react-router-dom";
 
 function ContactCard() {
   return (
     <div className="contact-card-container">
       <div className="contact-info-container">
+        <Link className="email-link" 
+        to={{
+              pathname:"mailto:jessa.clark@icloud.com" }}
+              target="_blank">
         <div className="email-container">
           <div className="email-icon">
             <img src={email} alt="email" />
@@ -21,7 +26,11 @@ function ContactCard() {
             </div>
           </div>
         </div>
-
+        </Link>
+        <Link className="linkedin-link" 
+        to={{
+              pathname:"https://www.linkedin.com/in/jessa-clark/" }}
+              target="_blank">
         <div className="linkedin-container">
           <div className="linkedin-icon">
             <img src={linkedin} alt="linkedin" />
@@ -37,6 +46,11 @@ function ContactCard() {
             </div>
           </div>
         </div>
+        </Link>
+        <Link className="github-link" 
+        to={{
+              pathname:"https://github.com/jessa-clark" }}
+              target="_blank">
         <div className="github-container">
           <div className="github-icon">
             <img src={github} alt="github" />
@@ -52,6 +66,7 @@ function ContactCard() {
             </div>
           </div>
         </div>
+        </Link>
       </div>
       <div className="contact-card-title">
         <p>Let's Work Together!</p>
